@@ -5,23 +5,30 @@ import "../App.css"
 function Question() {
     return (
         <div className="Question">
+            <br></br>
             <h2 id="questionaireh">Pre-Matching Questionaire</h2>
+            <br></br>
             <div className="jumbotron" id="jumbo">
-                <p>What Games do you play?</p>
+                <p>What game are you looking to group up in?</p>
                 <div class="dropdown">
                     <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Select Here
                         </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <p class="dropdown-item" href="#">League Of Legends</p>
-                        <p class="dropdown-item" href="#">Escape From Tarkov</p>
-                        <p class="dropdown-item" href="#">Halo Reach</p>
-                        <p class="dropdown-item" href="#">Borderlands 3</p>
-                        <p class="dropdown-item" href="#">Call of Duty:Black Ops 3</p>
-                        <p class="dropdown-item" href="#">Call of Duty:Modern Warfare(new)</p>
-                        <p class="dropdown-item" href="#">BattleField 4</p>
-                        <p class="dropdown-item" href="#">BattleField 5</p>
-
+                        <a class="dropdown-item" href="#">League Of Legends</a>
+                        <a class="dropdown-item" href="#">Escape From Tarkov</a>
+                        <a class="dropdown-item" href="#">Halo Reach</a>
+                        <a class="dropdown-item" href="#">Borderlands 3</a>
+                        <a class="dropdown-item" href="#">Call of Duty: Black Ops 3</a>
+                        <a class="dropdown-item" href="#">Call of Duty: Modern Warfare</a>
+                        <a class="dropdown-item" href="#">BattleField 4</a>
+                        <a class="dropdown-item" href="#">BattleField 1</a>
+                        <a class="dropdown-item" href="#">Dota</a>
+                        <a class="dropdown-item" href="#">Overwatch</a>
+                        <a class="dropdown-item" href="#">World of Warcraft</a>
+                        <a class="dropdown-item" href="#">Runescape</a>
+                        <a class="dropdown-item" href="#">Hearthstone</a>
+                        <a class="dropdown-item" href="#">Counter-Strike</a>
                     </div>
                 </div>
                 <br></br>
@@ -54,7 +61,7 @@ function Question() {
                         Select Here
                         </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">1(Noob)</a>
+                        <a class="dropdown-item" href="#">1(Hot Trash)</a>
                         <a class="dropdown-item" href="#">2</a>
                         <a class="dropdown-item" href="#">3(Average Joe)</a>                        
                         <a class="dropdown-item" href="#">4</a>                        
