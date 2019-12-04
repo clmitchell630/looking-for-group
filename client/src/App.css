@@ -73,3 +73,7 @@ font-size: 380%;
 #group {
   transform: translateY(-100px);
 }
+
+.pid {
+  visibility: hidden;
+}

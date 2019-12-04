@@ -22,15 +22,15 @@ function Signup() {
         <div class="form-group form-group-sm">
             <label for="pid" class="control-label field_name2 row-xs-4 row-sm-4 row-md-3">Email:</label>
             <div class="row-xs-8 row-sm-4 row-md-4">
-                    <input class="form-control" id="pid" />
+                    <input class="form-control" type="email" id="pid" />
             </div>
         </div>
 </div>
 <div class="form-horizontal">      
         <div class="form-group form-group-sm">
-            <label for="pid" class="control-label field_name2 row-xs-4 row-sm-4 row-md-3">Password:</label>
+            <label for="pid" id="pid" class="control-label field_name2 row-xs-4 row-sm-4 row-md-3">Password:</label>
             <div class="row-xs-8 row-sm-4 row-md-4">
-                    <input class="form-control" id="pid" />
+                    <input class="form-control" type="password" id="pid" required/>
             </div>
         </div>
 </div>
@@ -38,12 +38,12 @@ function Signup() {
         <div class="form-group form-group-sm">
             <label for="pid" class="control-label field_name2 row-xs-4 row-sm-4 row-md-3">Confirm password:</label>
             <div class="row-xs-8 row-sm-4 row-md-4">
-                    <input class="form-control" id="pid" />
+                    <input class="form-control" type="password" id="pid" required/>
             </div>
         </div>
 </div>
 <br></br>
-<button type="button" id="btnsu" class="btn btn-outline-danger">Sign me up!</button>
+<button disabled="{!isEnabled}" type="button" id="btnsu" class="btn btn-outline-danger">Sign me up!</button>
 </div>
 
             </div>
