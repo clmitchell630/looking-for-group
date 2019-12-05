@@ -3,7 +3,7 @@ import React from 'react';
 function Register() {
     return (
         <div id= "regButton">
-                <button variant = "primary" href = "/register">Register</button>
+                <a class="btn btn-primary" href = "/register" role = "button">Register</a>
         </div>
     );
 }

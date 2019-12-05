@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import Register from '../components/Register'
-import Description from '../components/Register'
+import Register from '../components/Register';
+import Description from '../components/Register';
 
 class Landing extends Component {
 
     render() {
         return (
-            <Container fluid>
+            <div>
                 <Navbar>
 
                 </Navbar>
-                <Container>
+                <div>
                     <Description />
                     <br />
                     <br />
                     <Register />
-                </Container>
-            </Container>
+                </div>
+            </div>
+
         )
     }
 }
