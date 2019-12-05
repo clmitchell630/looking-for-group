@@ -15,6 +15,6 @@ class Match extends Component {
     }
         
     }
-
-
 }
+
+import React from "react";

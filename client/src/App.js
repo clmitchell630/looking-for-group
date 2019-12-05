@@ -1,10 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import About from "../src/pages/about"
+import Navbar from './components/Navbar/';
 
 function App() {
-  return <About />
+  return (
+    <Navbar />
+  );
 }
 
 export default App;
