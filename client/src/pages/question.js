@@ -17,16 +17,16 @@ class Question extends Component {
         this.setState({ [evt.target.name]: evt.target.value })
     };
 
-    // handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     // API.saveUser({
-    //     //     game: this.state.value.gameDropdown,
-    //     //     playLevel: this.state.value.levelDropdown,
-    //     //     troll: this.state.value.trollDropdown,
-    //     //     skillLevel: this.state.value.skillDropdown
-    //     // })
-    //         .catch(err => console.log(err));
-    // };
+    hnadleFormSubmit = evt => {
+        evt.preventDefault();
+        API.saveUser({
+            game: this.state.value.gameDropdown,
+            playLevel: this.state.value.levelDropdown,
+            troll: this.state.value.trollDropdown,
+            skillLevel: this.state.value.skillDropdown
+        })
+            .catch(err => console.log(err));
+    };
 
     render() {
         return (
