@@ -1,13 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     return (
         <div>
             <nav className="nav">
                 <div className="col-12">
-                    <div className="row">
-                        <a className="nav-link" href="/">[LOGO]</a>
-                        <a className="nav-link" href="/about">What's this?</a>
+                    <div className="row" >
+                        <Link to={'/'}>
+                           <span className="nav-link">[LOGO]</span>
+                        </Link>
+                        <Link to={'/about'}>
+                            <span className="nav-link">What's this?</span>
+                        </Link>
                         <button type="button" className="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             Sign-in
                         </button>

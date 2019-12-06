@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Register() {
+export function Register() {
     return (
         <div id= "regButton">
                 <a class="btn btn-primary" href = "/register" role = "button">Register</a>
@@ -8,7 +8,7 @@ function Register() {
     );
 }
 
-function Description() {
+export function Description() {
     return (
         <div id = "description">
             <p className = "appDescription"> Looking for Group is designed to help bring gamers together who don't typically have friends to play with online.
@@ -22,6 +22,3 @@ function Description() {
         </div>
     )
 }
-
-export default Register;
-export default Description;

@@ -1,20 +1,21 @@
 import React, {Component} from "react";
-import ThumbsBttns from "../components/match"
+import ThumbsBttns from "../components/match";
+
 class Match extends Component {
     state = {
         lastMatch: []
     };
 
-    componentDidMount() {
-        API.getMatch()
-        .then(res => this.setState({lastMatch: res.data}))
-        .catch(err => console.log(err))
-    }
+    // componentDidMount() {
+    //     API.getMatch()
+    //     .then(res => this.setState({lastMatch: res.data}))
+    //     .catch(err => console.log(err))
+    // }
 
-    handleThumbsUpButton = () => {savedMatch => {
-    }
+    handleThumbsUpButton = savedMatch => {
+    
         
     }
 }
 
-import React from "react";
+export default Match;

@@ -1,7 +1,7 @@
-import React from "react";
+import React,  { Component } from "react";
 import "../App.css"
 
-class question extends Component {
+class Question extends Component {
 
     constructor() {
         super();
@@ -17,16 +17,16 @@ class question extends Component {
         this.setState({ [evt.target.name]: evt.target.value })
     };
 
-    hnadleFormSubmit = evt => {
-        event.preventDefault();
-        API.saveUser({
-            game: this.state.value.gameDropdown,
-            playLevel: this.state.value.levelDropdown,
-            troll: this.state.value.trollDropdown,
-            skillLevel: this.state.value.skillDropdown
-        })
-            .catch(err => console.log(err));
-    };
+    // handleFormSubmit = event => {
+    //     event.preventDefault();
+    //     // API.saveUser({
+    //     //     game: this.state.value.gameDropdown,
+    //     //     playLevel: this.state.value.levelDropdown,
+    //     //     troll: this.state.value.trollDropdown,
+    //     //     skillLevel: this.state.value.skillDropdown
+    //     // })
+    //         .catch(err => console.log(err));
+    // };
 
     render() {
         return (
