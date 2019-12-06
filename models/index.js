@@ -1,3 +1,3 @@
 module.exports = {
-    UserAnswers: require("./answer")
+    UserAnswers: require("./answers")
 };
