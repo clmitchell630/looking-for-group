@@ -18,7 +18,7 @@ class question extends Component {
     };
 
     hnadleFormSubmit = evt => {
-        event.preventDefault();
+        evt.preventDefault();
         API.saveUser({
             game: this.state.value.gameDropdown,
             playLevel: this.state.value.levelDropdown,
