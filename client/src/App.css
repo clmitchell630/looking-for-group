@@ -17,6 +17,63 @@
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+
+#btnone {
+  transform: translateX(-700px);
+  height: 75px;
+  width: 100px;
+  border-radius: 100%;
+}
+
+#lmone {
+  transform: translateX(-65px);
+}
+
+#Aboutlfg {
+  text-align: center;
+}
+
+#questionaireh {
+  text-align: center;
+}
+
+#jumbo {
+  text-align: center;
+  width: 500px !important;
+  margin: auto;
+}
+
+#bckrnd {
+transform: translateY(80px);
+margin: auto;
+background-color: white !important;
+border-style: outset;
+width: 500px;
+height: 600px;
+}
+  
+#btnsu {
+  margin-left:37% ;
+}
+
+#hdr{
+margin:auto;
+font-family: 'Lobster', cursive;
+font-size: 380%;
+}
+
+#hdrbr {
+  margin: auto;
+  height: 100px;
+  width: 500px;
+  background-color: white !important;
+  transform: translateY(-50px);
+}
+
+#group {
+  transform: translateY(-100px);
+}
+
+.pid {
+  visibility: hidden;
 }
