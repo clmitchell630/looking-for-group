@@ -3,12 +3,15 @@ import "../App.css"
 
 class question extends Component {
 
-    state = {
+    constructor() {
+        super();
+    this.state = {
         gameDropdown: "",
         levelDropdown: "",
         trollDropdown: "",
         skillDropdown: "",
     };
+}
 
     handleInputChange = evt => {
         this.setState({ [evt.target.name]: evt.target.value })
