@@ -5,7 +5,7 @@ mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/usersearch"
 );
 
-const userSeed = [
+const UserAnswersSeed = [
     {
         game: "Halo Reach",
         playLevel: "Casual",
@@ -15,9 +15,9 @@ const userSeed = [
     }
 ];
 
-db.User
+db.UserAnswers
 .remove({})
-.then(() => db.User.collection.insertMany(UserSeed))
+.then(() => db.UserAnswers.collection.insertMany(UserSeed))
 .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

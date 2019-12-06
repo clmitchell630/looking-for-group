@@ -18,6 +18,8 @@ class Question extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
 }
 
+
+
     handleInputChange = evt => {
         this.setState({ [evt.target.name]: evt.target.value });
     };
