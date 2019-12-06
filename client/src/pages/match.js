@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import ThumbsBttns from "../components/Match";
 import API from '../utils/API';
+import { Col, Row, Container } from '../components/Grid';
 
 class Match extends Component {
     state = {
@@ -16,6 +17,14 @@ class Match extends Component {
     handleThumbsUpButton = savedMatch => {
     
         
+    }
+
+    render() {
+        return(
+            <Container>
+                
+            </Container>
+        );
     }
 }
 
