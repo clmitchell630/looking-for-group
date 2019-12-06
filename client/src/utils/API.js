@@ -5,4 +5,3 @@ export default{
         return axios.post("/api/user", gameDropdown, levelDropdown, trollDropdown, skillDropdown)
     }
     }
-}

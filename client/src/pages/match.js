@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import ThumbsBttns from "../components/match";
+import ThumbsBttns from "../components/Match";
 
 class Match extends Component {
     state = {

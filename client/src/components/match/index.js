@@ -1,6 +1,6 @@
 import React from 'react';
 import { PromiseProvider } from 'mongoose';
-import { Row } from '../grid';
+import { Row } from '../Grid';
 
 export function ThumbsBttns(props) {
     return (
