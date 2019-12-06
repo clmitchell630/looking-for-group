@@ -8,14 +8,16 @@ function Navbar() {
                 <div className="col-12">
                     <div className="row" >
                         <Link to={'/'}>
-                           <span className="nav-link">[LOGO]</span>
+                            <span className="nav-link">[LOGO]</span>
                         </Link>
                         <Link to={'/about'}>
                             <span className="nav-link">What's this?</span>
                         </Link>
-                        <button type="button" className="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Sign-in
-                        </button>
+                        <Link to={'/matchform'}>
+                            <button type="button" className="btn btn-link dropdown-toggle">
+                                Sign-in
+                            </button>
+                        </Link>
                         <div className="dropdown-menu dropdown-menu-right">
                             <form className="dropdown-menu p-4">
                                 <div className="form-group">
@@ -34,7 +36,7 @@ function Navbar() {
                                         </label>
                                     </div>
                                 </div>
-                                <button type="submit" className="btn btn-primary">Sign in</button>
+                                <button className="btn btn-primary">Sign in</button>
                             </form>
                         </div>
                     </div>
