@@ -1,5 +1,6 @@
 import React,  { Component } from "react";
-import "../App.css"
+import "../App.css";
+import API from '../utils/API';
 
 class Question extends Component {
 
@@ -37,7 +38,7 @@ class Question extends Component {
                 <div className="jumbotron" id="jumbo">
                     <p>What game are you looking to group up in?</p>
                     <div class="dropdown">
-                        <select onChange={this.change} value={this.state.value.gameDropdown}>
+                        <select onChange={this.handleInputChange} value={this.state.gameDropdown}>
                             <option value="League of Legends">League Of Legends</option>
                             <option value="Escape From Tarkov">>Escape From Tarkov</option>
                             <option value="Halo Reach">>Halo Reach</option>
@@ -57,7 +58,7 @@ class Question extends Component {
                     <br></br>
                     <p>Level of play</p>
                     <div class="dropdown">
-                        <select onChange={this.change} value={this.state.value.levelDropdown}>
+                        <select onChange={this.handleInputChange} value={this.state.levelDropdown}>
                             <option value="Casual">Casual</option>
                             <option value="Competitive">Competitive</option>
                             <option value="Speed-Run">Speed-Run</option>
@@ -66,7 +67,7 @@ class Question extends Component {
                     <br></br>
                     <p>Troll or not?</p>
                     <div class="dropdown">
-                        <select onChange={this.change} value={this.state.value.trollDropdown}>
+                        <select onChange={this.handleInputChange} value={this.state.trollDropdown}>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                         </select>
@@ -74,7 +75,7 @@ class Question extends Component {
                     <br></br>
                     <p>Skill level</p>
                     <div class="dropdown">
-                        <select onChange={this.change} value={this.state.value.skillDropdown}>
+                        <select onChange={this.handleInputChange} value={this.state.skillDropdown}>
                             <option value="1">1(Hot Trash)</option>
                             <option value="2">2</option>
                             <option value="3">3(Average Joe)</option>
