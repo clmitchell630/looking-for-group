@@ -28,6 +28,10 @@ class Landing extends Component {
             
             </div>
 
+        <div class="footer">
+            <p> Copyright © 2019 Looking for Group </p>
+        </div>
+
         
         </div>
 
