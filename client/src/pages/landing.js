@@ -6,7 +6,9 @@ class Landing extends Component {
 
     render() {
         return (
-            <Navbar />
+            <div>
+                <p>things</p>
+            </div>
         );
     }
 }
