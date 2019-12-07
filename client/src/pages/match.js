@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { ThumbsBttns, lastMatch } from "../components/Match";
-import API from '../utils/API';
 import { Col, Row, Container } from '../components/Grid';
 
 class MatchPage extends Component {
