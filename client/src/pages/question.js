@@ -97,7 +97,7 @@ class Question extends Component {
                     <div className="buttonDiv">
                         <Link to="/yourmatch">
                             {/*remember to add back the  onClick={this.handleFormSubmit}*/}
-                            <button className="saveUser btn btn-primary">Save Results</button>
+                            <button className="saveUser btn btn-primary" onClick={this.handleFormSubmit}>Save Results</button>
                         </Link>
                     </div>
 
