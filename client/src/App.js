@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './pages/about';
 import Landing from './pages/landing';
-import Match from './pages/match';
+import MatchPage from './pages/match';
 import Question from './pages/question';
 import Register from './pages/register';
 import Signup from './pages/signup';
