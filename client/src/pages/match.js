@@ -3,7 +3,7 @@ import { ThumbsBttns, lastMatch } from "../components/Match";
 import API from '../utils/API';
 import { Col, Row, Container } from '../components/Grid';
 
-class Match extends Component {
+class MatchPage extends Component {
     state = {
         lastMatch: []
     };
@@ -49,4 +49,4 @@ class Match extends Component {
     }
 }
 
-export default Match;
+export default MatchPage;
