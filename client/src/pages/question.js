@@ -1,76 +1,111 @@
-import React from "react";
-import "../App.css"
+import React, { Component } from "react";
+import "../App.css";
+import API from '../utils/API';
+import { userInfo } from "os";
+import { Link } from 'react-router-dom';
+
+class Question extends Component {
+
+    state = {
+
+        gameDropdown: "",
+        levelDropdown: "",
+        trollDropdown: "",
+        skillDropdown: "",
+
+    };
 
 
-function Question() {
-    return (
-        <div className="Question">
-            <br></br>
-            <h2 id="questionaireh">Pre-Matching Questionaire</h2>
-            <br></br>
-            <div className="jumbotron" id="jumbo">
-                <p>What game are you looking to group up in?</p>
-                <div class="dropdown">
-                    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select Here
-                        </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">League Of Legends</a>
-                        <a class="dropdown-item" href="#">Escape From Tarkov</a>
-                        <a class="dropdown-item" href="#">Halo Reach</a>
-                        <a class="dropdown-item" href="#">Borderlands 3</a>
-                        <a class="dropdown-item" href="#">Call of Duty: Black Ops 3</a>
-                        <a class="dropdown-item" href="#">Call of Duty: Modern Warfare</a>
-                        <a class="dropdown-item" href="#">BattleField 4</a>
-                        <a class="dropdown-item" href="#">BattleField 1</a>
-                        <a class="dropdown-item" href="#">Dota</a>
-                        <a class="dropdown-item" href="#">Overwatch</a>
-                        <a class="dropdown-item" href="#">World of Warcraft</a>
-                        <a class="dropdown-item" href="#">Runescape</a>
-                        <a class="dropdown-item" href="#">Hearthstone</a>
-                        <a class="dropdown-item" href="#">Counter-Strike</a>
-                    </div>
-                </div>
+
+
+    handleInputChange = evt => {
+
+        const { name, value } = evt.target;
+        this.setState({ [name]: value });
+
+    };
+
+    handleFormSubmit = evt => {
+        evt.preventDefault();
+        console.log(this.state);
+        API.saveUser({
+            game: this.state.gameDropdown,
+            playLevel: this.state.levelDropdown,
+            troll: this.state.trollDropdown,
+            skillLevel: this.state.skillDropdown
+        })
+            .then(res => console.log("success"))
+            .catch(err => console.log(err));
+    };
+
+    render() {
+        return (
+            <div className="Question">
+                <br />
+                <h2 id="questionaireh">Pre-Matching Questionaire</h2>
                 <br></br>
-                <p>Level of play</p>
-                <div class="dropdown">
-                    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select Here
-                        </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Casual</a>
-                        <a class="dropdown-item" href="#">Competitive</a>                        
-                        <a class="dropdown-item" href="#">Speed-Run</a>
+                <div className="jumbotron" id="jumbo">
+                    <p>What game are you looking to group up in?</p>
+                    <div className="dropdown">
+                        <select onChange={this.handleInputChange} value={this.state.gameDropdown} name="gameDropdown">
+                            <option value="League of Legends">League Of Legends</option>
+                            <option value="Escape From Tarkov">>Escape From Tarkov</option>
+                            <option value="Halo Reach">>Halo Reach</option>
+                            <option value="Borderlands 3">>Borderlands 3</option>
+                            <option value="Call of Duty: Black Ops 3">>Call of Duty: Black Ops 3</option>
+                            <option value="Call of Duty: Modern Warfare">>Call of Duty: Modern Warfare</option>
+                            <option value="BattleField 4">>BattleField 4</option>
+                            <option value="BattleField 1">>BattleField 1</option>
+                            <option value="Dota">>Dota</option>
+                            <option value="Overwatch">>Overwatch</option>
+                            <option value="World of Warcraft">>World of Warcraft</option>
+                            <option value="Runescape">>Runescape</option>
+                            <option value="Hearthstone">>Hearthstone</option>
+                            <option value="Counter-Strike">>Counter-Strike</option>
+                        </select>
                     </div>
-                </div>
-                <br></br>
-                <p>Troll or not?</p>
-                <div class="dropdown">
-                    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select Here
-                        </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Yes</a>
-                        <a class="dropdown-item" href="#">No</a>                        
+                    <br></br>
+                    <p>Level of play</p>
+                    <div className="dropdown">
+                        <select value={this.state.levelDropdown} onChange={this.handleInputChange} name="levelDropdown">
+                            <option value="Casual">Casual</option>
+                            <option value="Competitive">Competitive</option>
+                            <option value="Speed-Run">Speed-Run</option>
+                        </select>
                     </div>
-                </div>
-                <br></br>
-                <p>Skill level</p>
-                <div class="dropdown">
-                    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select Here
-                        </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">1(Hot Trash)</a>
-                        <a class="dropdown-item" href="#">2</a>
-                        <a class="dropdown-item" href="#">3(Average Joe)</a>                        
-                        <a class="dropdown-item" href="#">4</a>                        
-                        <a class="dropdown-item" href="#">5(Legendary)</a>                                                
+                    <br></br>
+                    <p>Troll or not?</p>
+                    <div className="dropdown">
+                        <select value={this.state.trollDropdown} onChange={this.handleInputChange} name="trollDropdown">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
                     </div>
+                    <br></br>
+                    <p>Skill level</p>
+                    <div className="dropdown">
+                        <select value={this.state.skillDropdown} onChange={this.handleInputChange} name="skillDropdown">
+                            <option value="1">1(Hot Trash)</option>
+                            <option value="2">2</option>
+                            <option value="3">3(Average Joe)</option>
+                            <option value="4">4</option>
+                            <option value="5">5(Legendary)</option>
+                        </select>
+                    </div>
+                    <br></br>
+
+                    <div className="buttonDiv">
+                        <Link to="/yourmatch">
+                            {/*remember to add back the  onClick={this.handleFormSubmit}*/}
+                            <button className="saveUser btn btn-primary">Save Results</button>
+                        </Link>
+                    </div>
+
                 </div>
+
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default Question;

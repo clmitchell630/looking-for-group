@@ -13,6 +13,6 @@ if(process.env.NODE_ENV === 'production'){
 
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/lfgdb');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/lookingforgroup');
 
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));

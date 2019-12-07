@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
+import { Register, Description } from '../components/Register';
+import { Col, Row, Container } from '../components/Grid';
+
 
 class Landing extends Component {
 
     render() {
         return (
-            <Navbar />
+            <div>
+                <Container>
+                <div>
+                    <Description />
+                    <br />
+                    <br />
+                    <Register />
+                </div>
+                </Container>
+            </div>
+
         );
     }
 }
