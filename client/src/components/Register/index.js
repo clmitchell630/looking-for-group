@@ -5,7 +5,7 @@ export function Register() {
     return (
         <Link to='/register'>
             <div id="regButton">
-                <button class="btn btn-primary" role="button">Register</button>
+                <button className="btn btn-primary" role="button">Register</button>
             </div>
         </Link>
     );
