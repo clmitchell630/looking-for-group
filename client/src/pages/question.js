@@ -1,30 +1,37 @@
 import React,  { Component } from "react";
 import "../App.css";
 import API from '../utils/API';
+import { userInfo } from "os";
 
 class Question extends Component {
 
     constructor() {
         super();
     this.state = {
+        
         gameDropdown: "",
         levelDropdown: "",
         trollDropdown: "",
         skillDropdown: "",
+        
     };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.hnadleFormSubmit = this.hnadleFormSubmit.bind(this);
 }
 
+
+
     handleInputChange = evt => {
-        this.setState({ [evt.target.name]: evt.target.value })
+        this.setState({ [evt.target.name]: evt.target.value });
     };
 
     hnadleFormSubmit = evt => {
         evt.preventDefault();
         API.saveUser({
-            game: this.state.value.gameDropdown,
-            playLevel: this.state.value.levelDropdown,
-            troll: this.state.value.trollDropdown,
-            skillLevel: this.state.value.skillDropdown
+            game: this.state.gameDropdown,
+            playLevel: this.state.levelDropdown,
+            troll: this.state.trollDropdown,
+            skillLevel: this.state.skillDropdown
         })
             .catch(err => console.log(err));
     };
@@ -32,13 +39,13 @@ class Question extends Component {
     render() {
         return (
             <div className="Question">
-                <br></br>
+                <br/>
                 <h2 id="questionaireh">Pre-Matching Questionaire</h2>
                 <br></br>
                 <div className="jumbotron" id="jumbo">
                     <p>What game are you looking to group up in?</p>
-                    <div class="dropdown">
-                        <select onChange={this.handleInputChange} value={this.state.gameDropdown}>
+                    <div className="dropdown">
+                        <select onChange={this.handleInputChange} value={this.state.gameDropdown} name="gameDropdown">
                             <option value="League of Legends">League Of Legends</option>
                             <option value="Escape From Tarkov">>Escape From Tarkov</option>
                             <option value="Halo Reach">>Halo Reach</option>
@@ -57,8 +64,8 @@ class Question extends Component {
                     </div>
                     <br></br>
                     <p>Level of play</p>
-                    <div class="dropdown">
-                        <select onChange={this.handleInputChange} value={this.state.levelDropdown}>
+                    <div className="dropdown">
+                        <select onChange={this.handleInputChange} value={this.state.levelDropdown} name="levelDropdown">
                             <option value="Casual">Casual</option>
                             <option value="Competitive">Competitive</option>
                             <option value="Speed-Run">Speed-Run</option>
@@ -66,16 +73,16 @@ class Question extends Component {
                     </div>
                     <br></br>
                     <p>Troll or not?</p>
-                    <div class="dropdown">
-                        <select onChange={this.handleInputChange} value={this.state.trollDropdown}>
+                    <div className="dropdown">
+                        <select onChange={this.handleInputChange} value={this.state.trollDropdown} name="trollDropdown">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                         </select>
                     </div>
                     <br></br>
                     <p>Skill level</p>
-                    <div class="dropdown">
-                        <select onChange={this.handleInputChange} value={this.state.skillDropdown}>
+                    <div className="dropdown">
+                        <select onChange={this.handleInputChange} value={this.state.skillDropdown} name="skillDropdown">
                             <option value="1">1(Hot Trash)</option>
                             <option value="2">2</option>
                             <option value="3">3(Average Joe)</option>
@@ -83,6 +90,9 @@ class Question extends Component {
                             <option value="5">5(Legendary)</option>
                         </select>
                     </div>
+                </div>
+                <div className="buttonDiv">
+                    <button className="saveUser btn btn-primary" onClick={this.handleFormSubmit}>Save Results</button>
                 </div>
             </div>
         );
