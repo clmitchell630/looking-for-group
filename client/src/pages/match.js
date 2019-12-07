@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import ThumbsBttns from "../components/Match";
+import { ThumbsBttns, lastMatch } from "../components/Match";
 import API from '../utils/API';
 import { Col, Row, Container } from '../components/Grid';
 
@@ -8,11 +8,11 @@ class Match extends Component {
         lastMatch: []
     };
 
-    componentDidMount() {
-        API.getMatch()
-        .then(res => this.setState({lastMatch: res.data}))
-        .catch(err => console.log(err))
-    }
+    // componentDidMount() {
+    //     API.getMatch()
+    //     .then(res => this.setState({lastMatch: res.data}))
+    //     .catch(err => console.log(err))
+    // }
 
     handleThumbsUpButton = savedMatch => {
     
@@ -22,7 +22,8 @@ class Match extends Component {
     render() {
         return(
             <Container>
-                
+                <lastMatch />
+                 
             </Container>
         );
     }
