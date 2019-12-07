@@ -16,6 +16,7 @@ class Question extends Component {
         
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.hnadleFormSubmit = this.hnadleFormSubmit.bind(this);
 }
 
 
@@ -91,7 +92,7 @@ class Question extends Component {
                     </div>
                 </div>
                 <div className="buttonDiv">
-                    <button className="saveUser btn btn-primary" onClick={this.hnadleFormSubmit}>Save Results</button>
+                    <button className="saveUser btn btn-primary" onClick={this.handleFormSubmit}>Save Results</button>
                 </div>
             </div>
         );
