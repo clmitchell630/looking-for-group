@@ -5,7 +5,6 @@ import Landing from './pages/landing';
 import MatchPage from './pages/match';
 import Question from './pages/question';
 import Register from './pages/register';
-import Signup from './pages/signup';
 import './App.css';
 import Navbar from './components/Navbar/';
 
@@ -19,7 +18,7 @@ function App() {
             <Route exact path='/about' component={About} />
             <Route exact path='/register' component ={Register} />
             <Route exact path='/matchform' component ={Question} />
-            <Route exact path='/yourmatch' component ={MatchPage} />
+            <Route path='/yourmatch' component ={MatchPage} />
           </Switch>
       </div>
     </Router>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../App.css";
 import API from '../utils/API';
 import { userInfo } from "os";
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class Question extends Component {
 
@@ -25,6 +25,13 @@ class Question extends Component {
 
     };
 
+    handleRedirect =  res => {
+        if (res.status === 200) {
+            console.log('foo2')
+            window.location ="/yourmatch"
+            // return <Redirect to="/yourmatch" />
+        }
+    }
     handleFormSubmit = evt => {
         evt.preventDefault();
         console.log(this.state);
@@ -33,9 +40,10 @@ class Question extends Component {
             playLevel: this.state.levelDropdown,
             troll: this.state.trollDropdown,
             skillLevel: this.state.skillDropdown
+        }).then( res => {
+            this.handleRedirect(res);
+            console.log('foo1')
         })
-            .then(res => console.log("success"))
-            .catch(err => console.log(err));
     };
 
     render() {
@@ -95,10 +103,7 @@ class Question extends Component {
                     <br></br>
 
                     <div className="buttonDiv">
-                        <Link to="/yourmatch">
-                            {/*remember to add back the  onClick={this.handleFormSubmit}*/}
-                            <button className="saveUser btn btn-primary" onClick={this.handleFormSubmit}>Save Results</button>
-                        </Link>
+                        <button className="saveUser btn btn-primary" onClick={this.handleFormSubmit}>Save Results</button>
                     </div>
 
                 </div>
