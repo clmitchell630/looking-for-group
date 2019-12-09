@@ -2,7 +2,7 @@ const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
 router.route("/")
-.get(userController.findMatch)
+// .get(userController.findMatch)
 .post(userController.create);
 
 // router

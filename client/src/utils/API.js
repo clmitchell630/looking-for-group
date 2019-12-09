@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {
-    saveUser: function (gameDropdown, levelDropdown, trollDropdown, skillDropdown) {
-        return axios.post("/api/user", gameDropdown, levelDropdown, trollDropdown, skillDropdown)
+    saveUser: function (gameLevel, playLevel, troll, skillLevel) {
+        return axios.post("/api/user", gameLevel, playLevel, troll, skillLevel)
     }
 }

@@ -9,14 +9,14 @@ class Question extends Component {
         super();
     this.state = {
         
-        gameDropdown: "",
-        levelDropdown: "",
-        trollDropdown: "",
-        skillDropdown: "",
+        game: "",
+        playLevel: "",
+        troll: "",
+        skillLevel: "",
         
     };
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.hnadleFormSubmit = this.hnadleFormSubmit.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
 }
 
 
@@ -25,13 +25,13 @@ class Question extends Component {
         this.setState({ [evt.target.name]: evt.target.value });
     };
 
-    hnadleFormSubmit = evt => {
+    handleFormSubmit = (evt) => {
         evt.preventDefault();
         API.saveUser({
-            game: this.state.gameDropdown,
-            playLevel: this.state.levelDropdown,
-            troll: this.state.trollDropdown,
-            skillLevel: this.state.skillDropdown
+            game: this.state.game,
+            playLevel: this.state.playLevel,
+            troll: this.state.troll,
+            skillLevel: this.state.skillLevel
         })
             .catch(err => console.log(err));
     };
@@ -45,7 +45,7 @@ class Question extends Component {
                 <div className="jumbotron" id="jumbo">
                     <p>What game are you looking to group up in?</p>
                     <div className="dropdown">
-                        <select onChange={this.handleInputChange} value={this.state.gameDropdown} name="gameDropdown">
+                        <select onChange={this.handleInputChange} value={this.state.game} name="game">
                             <option value="League of Legends">League Of Legends</option>
                             <option value="Escape From Tarkov">>Escape From Tarkov</option>
                             <option value="Halo Reach">>Halo Reach</option>
@@ -65,7 +65,7 @@ class Question extends Component {
                     <br></br>
                     <p>Level of play</p>
                     <div className="dropdown">
-                        <select onChange={this.handleInputChange} value={this.state.levelDropdown} name="levelDropdown">
+                        <select onChange={this.handleInputChange} value={this.state.playLevel} name="playLevel">
                             <option value="Casual">Casual</option>
                             <option value="Competitive">Competitive</option>
                             <option value="Speed-Run">Speed-Run</option>
@@ -74,7 +74,7 @@ class Question extends Component {
                     <br></br>
                     <p>Troll or not?</p>
                     <div className="dropdown">
-                        <select onChange={this.handleInputChange} value={this.state.trollDropdown} name="trollDropdown">
+                        <select onChange={this.handleInputChange} value={this.state.troll} name="troll">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                         </select>
@@ -82,7 +82,7 @@ class Question extends Component {
                     <br></br>
                     <p>Skill level</p>
                     <div className="dropdown">
-                        <select onChange={this.handleInputChange} value={this.state.skillDropdown} name="skillDropdown">
+                        <select onChange={this.handleInputChange} value={this.state.skillLevel} name="skillLevel">
                             <option value="1">1(Hot Trash)</option>
                             <option value="2">2</option>
                             <option value="3">3(Average Joe)</option>

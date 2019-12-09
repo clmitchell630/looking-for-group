@@ -1,13 +1,13 @@
 const db = require("../models");
 
 module.exports = {
-    findMatch: function(req,res) {
-        db.UserAnswers
-        .find(req.query)
-        .sort({date: -1 })
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-    },
+    // findMatch: function(req,res) {
+    //     db.UserAnswers
+    //     .find(req.query)
+    //     .sort({date: -1 })
+    //     .then(dbModel => res.json(dbModel))
+    //     .catch(err => res.status(422).json(err));
+    // },
     create: function(req,res) {
         db.UserAnswers
         .create(req.body)
