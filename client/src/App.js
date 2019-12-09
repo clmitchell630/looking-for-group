@@ -8,6 +8,7 @@ import Register from './pages/register';
 import Signup from './pages/signup';
 import './App.css';
 import Navbar from './components/Navbar/';
+import GoogleSignIn from './components/Google Sign In';
 
 function App() {
   return (
@@ -27,3 +28,4 @@ function App() {
 }
 
 export default App;
+
