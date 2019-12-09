@@ -1,45 +1,47 @@
-import React,  { Component } from "react";
+import React, { Component } from "react";
 import "../App.css";
 import API from '../utils/API';
 import { userInfo } from "os";
+import { Link } from 'react-router-dom';
 
 class Question extends Component {
 
-    constructor() {
-        super();
-    this.state = {
-        
-        game: "",
-        playLevel: "",
-        troll: "",
-        skillLevel: "",
-        
+    state = {
+
+        gameDropdown: "",
+        levelDropdown: "",
+        trollDropdown: "",
+        skillDropdown: "",
+
     };
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
-}
+
 
 
 
     handleInputChange = evt => {
-        this.setState({ [evt.target.name]: evt.target.value });
+
+        const { name, value } = evt.target;
+        this.setState({ [name]: value });
+
     };
 
-    handleFormSubmit = (evt) => {
+    handleFormSubmit = evt => {
         evt.preventDefault();
+        console.log(this.state);
         API.saveUser({
             game: this.state.game,
             playLevel: this.state.playLevel,
             troll: this.state.troll,
             skillLevel: this.state.skillLevel
         })
+            .then(res => console.log("success"))
             .catch(err => console.log(err));
     };
 
     render() {
         return (
             <div className="Question">
-                <br/>
+                <br />
                 <h2 id="questionaireh">Pre-Matching Questionaire</h2>
                 <br></br>
                 <div className="jumbotron" id="jumbo">
@@ -65,7 +67,7 @@ class Question extends Component {
                     <br></br>
                     <p>Level of play</p>
                     <div className="dropdown">
-                        <select onChange={this.handleInputChange} value={this.state.playLevel} name="playLevel">
+                        <select value={this.state.levelDropdown} onChange={this.handleInputChange} name="levelDropdown">
                             <option value="Casual">Casual</option>
                             <option value="Competitive">Competitive</option>
                             <option value="Speed-Run">Speed-Run</option>
@@ -74,7 +76,7 @@ class Question extends Component {
                     <br></br>
                     <p>Troll or not?</p>
                     <div className="dropdown">
-                        <select onChange={this.handleInputChange} value={this.state.troll} name="troll">
+                        <select value={this.state.trollDropdown} onChange={this.handleInputChange} name="trollDropdown">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                         </select>
@@ -82,7 +84,7 @@ class Question extends Component {
                     <br></br>
                     <p>Skill level</p>
                     <div className="dropdown">
-                        <select onChange={this.handleInputChange} value={this.state.skillLevel} name="skillLevel">
+                        <select value={this.state.skillDropdown} onChange={this.handleInputChange} name="skillDropdown">
                             <option value="1">1(Hot Trash)</option>
                             <option value="2">2</option>
                             <option value="3">3(Average Joe)</option>
@@ -90,10 +92,17 @@ class Question extends Component {
                             <option value="5">5(Legendary)</option>
                         </select>
                     </div>
+                    <br></br>
+
+                    <div className="buttonDiv">
+                        <Link to="/yourmatch">
+                            {/*remember to add back the  onClick={this.handleFormSubmit}*/}
+                            <button className="saveUser btn btn-primary">Save Results</button>
+                        </Link>
+                    </div>
+
                 </div>
-                <div className="buttonDiv">
-                    <button className="saveUser btn btn-primary" onClick={this.handleFormSubmit}>Save Results</button>
-                </div>
+
             </div>
         );
     }

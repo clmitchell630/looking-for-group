@@ -9,6 +9,12 @@
       name="description"
       content="Web site created using create-react-app"
     />
+    <meta
+  name="google-signin-client_id"
+  content="your-client-ID.apps.googleusercontent.com"
+/>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
     <link rel="apple-touch-icon" href="logo192.png" />
     <link href="https://fonts.googleapis.com/css?family=Notable&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
@@ -60,6 +66,24 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" 
     integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" 
     crossorigin="anonymous"></script>
-    
+
+    <script>
+      function initGoogle() {
+        window.gapi.load('auth2', function() {
+           window.gapi.auth2.init({
+             client_id:
+               '1061898490220-jkpjr43lkjccg49hidkbem74m51jcj0s.apps.googleusercontent.com',
+           });
+       });
+     }
+   </script>
+   <meta
+   name="google-signin-client_id"
+   content="1061898490220-jkpjr43lkjccg49hidkbem74m51jcj0s.apps.googleusercontent.com"
+ />
+ <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+   <script src="https://apis.google.com/js/platform.js" onload="initGoogle()"></script>
+
   </body>
 </html>

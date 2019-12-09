@@ -8,7 +8,7 @@ function Navbar() {
                 <div className="col-12">
                     <div className="row" >
                         <Link to={'/'}>
-                            <span className="nav-link">[LOGO]</span>
+                            <span className="nav-link">LFG</span>
                         </Link>
                         <Link to={'/about'}>
                             <span className="nav-link">What's this?</span>
