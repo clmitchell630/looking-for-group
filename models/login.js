@@ -11,7 +11,7 @@ export class AuthStore {
     setAuthLoadingStatus(toStatus) {
       this.authLoadingStatus = toStatus;
     }
-  }
+  };
   export const LOADING_STATUS {
     INITIAL = 'INITIAL',
     LOADING = 'LOADING',
