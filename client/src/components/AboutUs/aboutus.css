@@ -1,0 +1,14 @@
+.aboutContainer {
+    padding-top: 5em;
+    color: #3FB143;
+    font-family: 'Courier New', Courier, monospace;
+}
+.about-group1 {
+    text-align: center;
+}
+.about-group2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #B1B1B1;
+    border-top: 1px solid #B1B1B1;
+    padding-top: 2em;
+}
