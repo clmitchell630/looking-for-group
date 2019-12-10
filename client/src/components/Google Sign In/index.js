@@ -66,7 +66,6 @@ class GoogleSignIn extends React.Component {
                 </div>
                 <br></br>
                 <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                <div id={GOOGLE_BUTTON_ID}/>
                 <button disabled="{!isEnabled}" type="submit" id="btnsu" class="btn btn-outline-danger">Sign me up!</button>
             </div>
 
