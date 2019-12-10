@@ -62,6 +62,10 @@ font-family: 'Lobster', cursive;
 font-size: 380%;
 }
 
+#regbtn {
+  transform: translateX(350px);
+}
+
 #hdrbr {
   margin: auto;
   height: 100px;
