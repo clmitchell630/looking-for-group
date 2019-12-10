@@ -12,7 +12,6 @@ import GoogleSignIn from './components/Google Sign In';
 function App() {
   return (
     <Router>
-      <div>
         <Navbar />
           <Switch>
             <Route exact path='/' component={Landing} />
@@ -21,7 +20,6 @@ function App() {
             <Route exact path='/matchform' component ={Question} />
             <Route path='/yourmatch' component ={MatchPage} />
           </Switch>
-      </div>
     </Router>
   );
 }
