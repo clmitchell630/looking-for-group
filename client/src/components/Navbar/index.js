@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth0 } from "../../react-auth0-spa";
+import navbar from"./navbar.css";
 
 function Navbar() {
+    const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
     return (
         <div>
             <nav className="nav">
@@ -14,10 +17,15 @@ function Navbar() {
                             <span className="nav-link">What's this?</span>
                         </Link>
                         <Link to={'/matchform'}>
-                            <button type="button" className="btn btn-link dropdown-toggle">
-                                Sign-in
-                            </button>
+                            <span className="nav-link">Matching</span>
                         </Link>
+                            <div id="Logn">
+                                {!isAuthenticated && (
+                                    <button className="btn" onClick={() => loginWithRedirect({})}>Log in</button>
+                                )}
+
+                                {isAuthenticated && <button className="btn" onClick={() => logout()}>Log out</button>}
+                            </div>
                         <div className="dropdown-menu dropdown-menu-right">
                             <form className="dropdown-menu p-4">
                                 <div className="form-group">
