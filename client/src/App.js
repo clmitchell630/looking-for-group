@@ -7,7 +7,7 @@ import Question from './pages/question';
 import Register from './pages/register';
 import './App.css';
 import Navbar from './components/Navbar/';
-import GoogleSignIn from './components/Google Sign In';
+
 
 function App() {
   return (
