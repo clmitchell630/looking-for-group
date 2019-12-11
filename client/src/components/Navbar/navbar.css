@@ -8,6 +8,11 @@
     text-decoration: none;
     color: #B1B1B1;
 }
+.nav-link{
+    background-color:#233243;
+    border: none;
+    color: #3FB143;
+}
 .nLinkStyle:active {
     color: #233243;
 }
