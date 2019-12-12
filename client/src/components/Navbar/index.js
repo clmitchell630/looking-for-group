@@ -17,7 +17,7 @@ function Navbar() {
                                     <button className="nav-link" onClick={() => loginWithRedirect({})}><i className="fas fa-sign-in-alt"></i>Sign In</button>
                                 )}
 
-                                {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
+                                {isAuthenticated && <button className="nav-link" onClick={() => logout()}>Log out</button>}
                             </div>
                         </Link>
                         <Link to={'/about'} className="nLinkStyle">
