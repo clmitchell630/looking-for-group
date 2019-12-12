@@ -1,5 +1,4 @@
 import React from "react";
-const GOOGLE_BUTTON_ID = 'google-sign-in-button';
 const isReady = authStore.authLoadingStatus === LOADING_STATUS.LOADED;
 
 
@@ -17,7 +16,4 @@ export class AuthStore {
     LOADING = 'LOADING',
     LOADED = 'LOADED',
     FAILED = 'FAILED'
-  }
-
-
-export default GoogleSignIn;
+  };
