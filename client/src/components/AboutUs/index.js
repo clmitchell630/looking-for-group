@@ -6,7 +6,7 @@ function AboutUs() {
         <div className="aboutContainer">
             <div className="about-group1">
                 <h2>Looking For Group</h2>
-                <h6>About Us.</h6>
+                <h6>About the app.</h6>
             </div>
             <div className="about-group2">
                 <p>Looking For Group is an app for individuals who enjoy playing video games, and are looking for others who share the same enjoyment.
