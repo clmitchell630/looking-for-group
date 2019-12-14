@@ -17,6 +17,10 @@
   color: white;
 }
 
+.loadMe{
+  margin: 0-auto;
+  color: white;
+}
 
 #btnone {
   transform: translateX(-700px);
