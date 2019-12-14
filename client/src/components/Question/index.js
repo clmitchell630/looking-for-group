@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
 import Jumbotron from '../Jumbotron';
+import { Link } from 'react-router-dom';
 import './question.css'
 
 class Question extends Component {
@@ -24,8 +25,7 @@ class Question extends Component {
     handleRedirect = res => {
         if (res.status === 200) {
             console.log('foo2')
-            window.location = "/yourmatch"
-            // return <Redirect to="/yourmatch" />
+            this.props.history.push('/mymatch');
         }
     }
     handleFormSubmit = evt => {
@@ -37,8 +37,8 @@ class Question extends Component {
             troll: this.state.trollDropdown,
             skillLevel: this.state.skillDropdown
         }).then(res => {
-            this.handleRedirect(res);
             console.log('foo1')
+            this.handleRedirect(res);
         })
     };
 
