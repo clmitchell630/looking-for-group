@@ -1,14 +1,11 @@
 import React from 'react';
 import { Container } from '../Grid';
+import './jumbotron.css';
 
 function Jumbotron({ children }) {
     return (
         <Container>
-            <div className="jumbotron">
-                <h1 className="display-4">Looking for Group</h1>
-
-                <hr className="my-4" />
-                <h4></h4>
+            <div className="jumbotron addStyle">
                 <p>{children}</p>
             </div>
         </Container>

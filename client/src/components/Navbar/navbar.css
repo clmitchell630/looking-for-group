@@ -1,20 +1,23 @@
 .nLinkStyle {
+    text-decoration: none;
     color: #3FB143;
-    padding: .2em 0 .2em 0;
     font-size: 1.4em;
     font-family: 'Courier New', Courier, monospace;
 }
 .nLinkStyle:hover {
     text-decoration: none;
     color: #B1B1B1;
+    cursor: pointer;
+}
+.nLinkStyle:active {
+    text-decoration: none;
+    color: #233243;
 }
 .nav-link{
+    text-decoration: none;
     background-color:#384757;
     border: none;
     color: #3FB143;
-}
-.nLinkStyle:active {
-    color: #233243;
 }
 .barStyle {
     background-color: #384757;
