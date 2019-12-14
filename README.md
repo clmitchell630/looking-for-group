@@ -39,19 +39,19 @@ others to play with.
 
 Initial landing page that gives a brief overview of the app and allows the user to: register, sign in, or
 learn more about the app.
-![Landing page](https://imgur.com/lGkGIk6)
+![Landing page](https://i.imgur.com/lGkGIk6.png)
 <br>
 An "About Us" page with more information about the app and how the app works.
-![About us](https://imgur.com/JFokBK3)
+![About us](https://i.imgur.com/JFokBK3.png)
 <br>
 A basic sign up page utilizing Auth0 user authentication service/technology.
-![Sign in](https://imgur.com/amyYzso)
+![Sign in](https://i.imgur.com/amyYzso.png)
 <br>
 Sign me up button will take you to the questionnaire to determine your first match.
-![Sign up](https://imgur.com/LfPTBxB)
+![Sign up](https://i.imgur.com/LfPTBxB.png)
 <br>
 Questionnaire will take in criteria to assist in matching you with the best possible player match.
-![Questionnaire](https://imgur.com/qILKxr6)
+![Questionnaire](https://i.imgur.com/qILKxr6.png)
 <br>
 Screen will start with a match based on your criteria. Or, if you are a returning user, based on
 your criteria you set last time. The giant image with a plus will be your matches profile
