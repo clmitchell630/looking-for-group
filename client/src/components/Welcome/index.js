@@ -25,6 +25,7 @@ function Welcome() {
                         <button className="welcome-btn" role="button" onClick={() => loginWithRedirect({})}>Sign in to get started</button>
                     </div>}
             </div>
+            <Link to='/profile' className="testProfile">[TEST] profile</Link>
         </div>
     );
 }

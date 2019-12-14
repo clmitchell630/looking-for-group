@@ -5,6 +5,7 @@ import Landing from './pages/landing';
 import MatchPage from './pages/match';
 import Question from './pages/question';
 import Register from './pages/register';
+import Profile from './pages/profile';
 import './App.css';
 import { useAuth0 } from "./react-auth0-spa";
 import Navbar from './components/Navbar/';
@@ -13,7 +14,7 @@ function App() {
   const { loading, isAuthenticated, loginWithRedirect } = useAuth0();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="loadMe">Loading...</div>;
   }
   return (
     <Router>
@@ -26,6 +27,7 @@ function App() {
         <Route exact path='/register' component={Register} />
         <Route exact path='/matchform' component={Question} />
         <Route exact path='/mymatch' component={MatchPage} />
+        <Route path='/profile' component={Profile} />
       </Switch>
     </Router>
   );
