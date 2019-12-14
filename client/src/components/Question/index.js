@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import API from '../../utils/API';
+import Select from 'react-select';
 import './question.css'
 
 class Question extends Component {
@@ -46,7 +47,7 @@ render() {
     return (
         <div className="Question">
             <br />
-            <h2 id="questionaireh" className="questionaire-link">Pre-Matching Questionaire</h2>
+            <h2 id="questionaireh" className="questionaire-link">Pre-Matching Questionnaire</h2>
             <br></br>
             <div className="jumbotron" id="jumbo">
                 <p>What game are you looking to group up in?</p>
