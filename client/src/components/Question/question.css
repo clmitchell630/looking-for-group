@@ -1,5 +1,39 @@
-.questionaire-link {
+.Question {
+    padding-top: 5em;
+    text-align: center;
     color: #3FB143;
-    padding: .2em 0 .2em 0;
     font-family: 'Courier New', Courier, monospace;
+}
+.dropStyle {
+    background-color: #233243;
+    border: 0px solid #233243;
+    color: #3FB143;
+    padding: .2em;
+    border-radius: 4px;
+}
+h2 {
+    font-size: 5em;
+    font-weight: bolder;
+}
+.pSize {
+    font-size: 1.2em;
+    padding-top: 1em;
+}
+.sub-btn {
+    color: #3FB143;
+    margin-top: 2em;
+    padding: .6em 4em;
+    background-color: #384757;
+    border: 4px solid #3FB143;
+    border-radius: 4px;
+    transition: transform .4s;
+}
+.sub-btn:hover {
+    transform: scale(1.1);
+    background-color: #233243;
+    box-shadow: 0px 0px 12px -2px black;
+}
+.sub-btn:active {
+    transform: scale(1);
+    background-color: #233243;
 }

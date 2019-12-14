@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from '../components/Grid';
+import Match from '../components/Match';
 
 class MatchPage extends Component {
     state = {
@@ -20,28 +21,7 @@ class MatchPage extends Component {
     render() {
         return (
             <Container>
-                <div className="jumbotron" id="jumbo">
-                    <h2>Your Match!</h2>
-                    <h5>
-                        Username: Connander
-                    </h5>
-                    <h5>
-                        Game: Halo Reach
-                    </h5>
-                    <h5>
-                        Play Level: Casual
-                    </h5>
-                    <h5>
-                        Troll?: No
-                    </h5>
-                    <h5>
-                        Skill Level: 1
-                    </h5>
-                    <h2>
-                        Connect!
-                    </h2>
-                    <h5>wolves3777@gmail.com</h5>
-                </div>
+                    <Match />
             </Container>
         );
     }

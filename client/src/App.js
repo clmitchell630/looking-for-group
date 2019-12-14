@@ -10,7 +10,7 @@ import { useAuth0 } from "./react-auth0-spa";
 import Navbar from './components/Navbar/';
 
 function App() {
-  const { loading } = useAuth0();
+  const { loading, isAuthenticated, loginWithRedirect } = useAuth0();
 
   if (loading) {
     return <div>Loading...</div>;
@@ -19,14 +19,14 @@ function App() {
     <Router>
       <div className="app">
         <Navbar />
-        </div>
-          <Switch>
-            <Route exact path='/' component={Landing} />
-            <Route exact path='/about' component={About} />
-            <Route exact path='/register' component ={Register} />
-            <Route exact path='/matchform' component ={Question} />
-            <Route path='/yourmatch' component ={MatchPage} />
-          </Switch>
+      </div>
+      <Switch>
+        <Route exact path='/' component={Landing} />
+        <Route exact path='/about' component={About} />
+        <Route exact path='/register' component={Register} />
+        <Route exact path='/matchform' component={Question} />
+        <Route exact path='/mymatch' component={MatchPage} />
+      </Switch>
     </Router>
   );
 }
