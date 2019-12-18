@@ -3,7 +3,10 @@ const userController = require("../../controllers/userController");
 
 router.route("/")
 // .get(userController.findMatch)
-.post(userController.create);
+    .post(userController.createUser);
+
+router.route("/answers")
+    .post(userController.create);
 
 // router
 //     .route("/:id")

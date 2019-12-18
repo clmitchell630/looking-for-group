@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './pages/about';
 import Landing from './pages/landing';
 import MatchPage from './pages/match';
-import Question from './pages/question';
+import Questions from './pages/question';
 import Register from './pages/register';
 import Profile from './pages/profile';
 import './App.css';
@@ -25,7 +25,7 @@ function App() {
         <Route exact path='/' component={Landing} />
         <Route exact path='/about' component={About} />
         <Route exact path='/register' component={Register} />
-        <Route exact path='/matchform' component={Question} />
+        <Route exact path='/matchform' component={Questions} />
         <Route exact path='/mymatch' component={MatchPage} />
         <Route path='/profile' component={Profile} />
       </Switch>

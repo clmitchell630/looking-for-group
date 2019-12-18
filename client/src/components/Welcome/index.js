@@ -1,10 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth0 } from "../../react-auth0-spa";
+import API from '../../utils/API';
 import "./welcome.css";
 
+function handleUserSubmit(loading, user, props) {
+
+    if (loading || !user) {
+        console.log("loading...");
+    }
+    console.log(user);
+    API.saveUser({
+        username: user.name,
+        email: user.email
+    }).then(res => {
+        if (res.status === 200) {
+            console.log('foo2');
+            this.props.history.push('/matchform');
+        }
+    }).catch(err => console.error(err));
+};
+
 function Welcome() {
+
     const { isAuthenticated, loginWithRedirect } = useAuth0();
+    const { loading, user } = useAuth0();
 
     return (
         <div className="welcomeContainer">
@@ -15,12 +35,10 @@ function Welcome() {
             <div className="welcome-g2">
                 {isAuthenticated ?
                     <div>
-                        <h6>Start searching!</h6>
-                        <Link to='/matchform'>
-                            <button className="welcome-btn" role="button">Get Started</button>
-                        </Link>
-                    </div> :
-                    <div>
+                        <h6> Start searching!</h6 >
+                        <button className="welcome-btn" role="button" onClick={() => handleUserSubmit(loading, user)}>Get Started</button>
+                    </div > :
+                    <div >
                         <h6>New?</h6>
                         <button className="welcome-btn" role="button" onClick={() => loginWithRedirect({})}>Sign in to get started</button>
                     </div>}
@@ -28,6 +46,7 @@ function Welcome() {
             <Link to='/profile' className="testProfile">[TEST] profile</Link>
         </div>
     );
+
 }
 
 export default Welcome;

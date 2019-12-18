@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
 import Jumbotron from '../Jumbotron';
-import { Link } from 'react-router-dom';
+
 import './question.css'
 
 class Question extends Component {
@@ -28,10 +28,11 @@ class Question extends Component {
             this.props.history.push('/mymatch');
         }
     }
+    
     handleFormSubmit = evt => {
         evt.preventDefault();
         console.log(this.state);
-        API.saveUser({
+        API.saveUserAnswers({
             game: this.state.gameDropdown,
             playLevel: this.state.levelDropdown,
             troll: this.state.trollDropdown,

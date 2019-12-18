@@ -18,4 +18,4 @@ class Questions extends Component {
 
 }
 
-export default Question;
+export default Questions;
