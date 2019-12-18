@@ -5,7 +5,7 @@ import API from '../../utils/API';
 import "./welcome.css";
 
 function handleUserSubmit(loading, user, props) {
-
+    console.log("PROPZ", props);
     if (loading || !user) {
         console.log("loading...");
     }
@@ -16,12 +16,12 @@ function handleUserSubmit(loading, user, props) {
     }).then(res => {
         if (res.status === 200) {
             console.log('foo2');
-            this.props.history.push('/matchform');
+            props.history.push('/matchform');
         }
     }).catch(err => console.error(err));
 };
 
-function Welcome() {
+function Welcome(props) {
 
     const { isAuthenticated, loginWithRedirect } = useAuth0();
     const { loading, user } = useAuth0();
@@ -36,7 +36,7 @@ function Welcome() {
                 {isAuthenticated ?
                     <div>
                         <h6> Start searching!</h6 >
-                        <button className="welcome-btn" role="button" onClick={() => handleUserSubmit(loading, user)}>Get Started</button>
+                        <button className="welcome-btn" role="button" onClick={() => handleUserSubmit(loading, user, props)}>Get Started</button>
                     </div > :
                     <div >
                         <h6>New?</h6>

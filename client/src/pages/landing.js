@@ -6,11 +6,13 @@ import Jumbotron from '../components/Jumbotron';
 
 
 class Landing extends Component {
-
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
             <Container>
-                <Welcome />
+                <Welcome history={this.props.history} />
             </Container>
         );
     }
