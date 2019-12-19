@@ -2,8 +2,10 @@ const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
 router.route("/")
-// .get(userController.findMatch)
-    .post(userController.createUser);
+    .post(userController.createUser);    
+
+router.route("/:userid")
+    .get(userController.existingUser);
 
 router.route("/answers")
     .post(userController.create);

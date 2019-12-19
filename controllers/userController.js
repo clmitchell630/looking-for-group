@@ -22,5 +22,13 @@ module.exports = {
             .create(req.body)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
-    }
+    },
+    existingUser: function(req, res) {
+            console.log("this is user mother fucking id");
+            console.log(req.params.userid);
+       db.User
+            .findOne({ "sub": req.params.userid })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
 }

@@ -4,14 +4,32 @@ import { useAuth0 } from "../../react-auth0-spa";
 import API from '../../utils/API';
 import "./welcome.css";
 
+
+function componentDidMount(loading, user, props) {
+   
+    console.log(user.sub);
+    API.getUser(user.sub)
+        .then(res => {
+            if(res.data.sub === user.sub) {
+                props.history.push('/matchform');
+            } else {
+                handleUserSubmit(loading, user, props);
+            }
+        
+        })
+        .catch(err => console.log(err));
+}
+
 function handleUserSubmit(loading, user, props) {
     console.log("PROPZ", props);
     if (loading || !user) {
         console.log("loading...");
     }
+
     API.saveUser({
         username: user.name,
-        email: user.email
+        email: user.email,
+        sub: user.sub
     }).then(res => {
         if (res.status === 200) {
             console.log('foo2');
@@ -19,6 +37,7 @@ function handleUserSubmit(loading, user, props) {
             console.log(props.history);
         }
     }).catch(err => console.error(err));
+
 };
 
 function Welcome(props) {
@@ -36,7 +55,7 @@ function Welcome(props) {
                 {isAuthenticated ?
                     <div>
                         <h6> Start searching!</h6 >
-                        <button className="welcome-btn" role="button" onClick={() => handleUserSubmit(loading, user, props)}>Get Started</button>
+                        <button className="welcome-btn" role="button" onClick={() => componentDidMount(loading, user, props)}>Get Started</button>
                     </div > :
                     <div >
                         <h6>New?</h6>
@@ -50,3 +69,4 @@ function Welcome(props) {
 }
 
 export default Welcome;
+

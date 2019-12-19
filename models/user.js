@@ -4,12 +4,16 @@ const Schema = mongoose.Schema;
 userSchema = new Schema({
     username: {
         type: String,
-        unique: true,
+        unique: true
     
     },
     email: {
         type: String,
-        unique: true,
+        unique: true
+    },
+    sub: {
+        type: String,
+        unique:true
     },
     answers: [
         {
