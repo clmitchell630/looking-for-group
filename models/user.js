@@ -5,7 +5,7 @@ userSchema = new Schema({
     username: {
         type: String,
         unique: true
-    
+
     },
     email: {
         type: String,
@@ -13,14 +13,17 @@ userSchema = new Schema({
     },
     sub: {
         type: String,
-        unique:true
+        unique: true
     },
-    answers: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "UserAnswers"
-        }
-    ]
+    date: {
+        type: Date,
+        default: Date.now
+    },
+    answers:
+    {
+        type: Schema.Types.ObjectId,
+        ref: "UserAnswers"
+    }
 });
 
 const User = mongoose.model("User", userSchema);

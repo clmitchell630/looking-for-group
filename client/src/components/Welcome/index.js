@@ -10,17 +10,17 @@ function componentDidMount(loading, user, props) {
     console.log(user.sub);
     API.getUser(user.sub)
         .then(res => {
-            if(res.data.sub === user.sub) {
+            if(res.data && res.data.sub === user.sub) {
                 props.history.push('/matchform');
             } else {
                 handleUserSubmit(loading, user, props);
             }
         })
-        .catch(err => console.log(err));
+        .catch(err => console.log(err))
 }
 
 function handleUserSubmit(loading, user, props) {
-    // console.log("PROPZ", props);
+    // console.log("PROPZ", props); 
     if (loading || !user) {
         console.log("loading...");
     }

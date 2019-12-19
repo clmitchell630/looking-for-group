@@ -53,7 +53,7 @@ class Question extends Component {
                 <Jumbotron>
                     <p className="pSize">What game are you looking to group up in?</p>
                     <div className="dropdown">
-                        <select onChange={this.handleInputChange} value={this.state.game} name="game" className="dropStyle">
+                        <select value={this.state.gameDropdown} onChange={this.handleInputChange}  name="gameDropdown" className="dropStyle">
                             <option value="League of Legends">League Of Legends</option>
                             <option value="Escape From Tarkov">Escape From Tarkov</option>
                             <option value="Halo Reach">Halo Reach</option>

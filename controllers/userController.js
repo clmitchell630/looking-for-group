@@ -13,7 +13,9 @@ module.exports = {
         console.log("userController.js::create()");
         db.UserAnswers
             .create(req.body)
-            .then(dbModel => res.json(dbModel))
+            .then(dbModel => {
+                return db.User.findOneAndUpdate({}, { $set: { answers: dbModel._id } }, { new: true });
+            })
             .catch(err => res.status(422).json(err));
     },
     createUser: function (req,res) {
