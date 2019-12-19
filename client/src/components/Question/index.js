@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
 import Jumbotron from '../Jumbotron';
-
 import './question.css'
 
 class Question extends Component {
@@ -29,7 +28,7 @@ class Question extends Component {
             this.props.history.push('/mymatch');
             console.log(this.props.history);
         }
-    }
+    };
     
     handleFormSubmit = evt => {
         evt.preventDefault();

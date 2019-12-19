@@ -14,7 +14,8 @@ module.exports = {
         db.UserAnswers
             .create(req.body)
             .then(dbModel => {
-                return db.User.findOneAndUpdate({}, { $set: { answers: dbModel._id } }, { new: true });
+                console.log("bleh");
+                return db.User.findOneAndUpdate({}, { $set: { answers: dbModel._id } }, { new: false }).then(dbModel => res.json(dbModel));
             })
             .catch(err => res.status(422).json(err));
     },
