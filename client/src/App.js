@@ -26,7 +26,7 @@ function App() {
         <Route exact path='/about' component={About} />
         <Route exact path='/register' component={Register} />
         <Route exact path='/matchform' component={Questions} />
-        <Route exact path='/mymatch' component={MatchPage} />
+        <Route path='/mymatch' component={MatchPage} />
         <Route path='/profile' component={Profile} />
       </Switch>
     </Router>

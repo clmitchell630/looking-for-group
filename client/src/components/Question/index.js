@@ -25,7 +25,9 @@ class Question extends Component {
     handleRedirect = res => {
         if (res.status === 200) {
             console.log('foo2')
+            console.log(this.props.history);
             this.props.history.push('/mymatch');
+            console.log(this.props.history);
         }
     }
     

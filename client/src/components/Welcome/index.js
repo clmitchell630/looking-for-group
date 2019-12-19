@@ -9,7 +9,6 @@ function handleUserSubmit(loading, user, props) {
     if (loading || !user) {
         console.log("loading...");
     }
-    console.log(user);
     API.saveUser({
         username: user.name,
         email: user.email
@@ -17,6 +16,7 @@ function handleUserSubmit(loading, user, props) {
         if (res.status === 200) {
             console.log('foo2');
             props.history.push('/matchform');
+            console.log(props.history);
         }
     }).catch(err => console.error(err));
 };
