@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Row, Container } from '../components/Grid';
+import { Container } from '../components/Grid';
 import Match from '../components/Match';
 
 class MatchPage extends Component {

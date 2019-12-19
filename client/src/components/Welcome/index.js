@@ -15,13 +15,12 @@ function componentDidMount(loading, user, props) {
             } else {
                 handleUserSubmit(loading, user, props);
             }
-        
         })
         .catch(err => console.log(err));
 }
 
 function handleUserSubmit(loading, user, props) {
-    console.log("PROPZ", props);
+    // console.log("PROPZ", props);
     if (loading || !user) {
         console.log("loading...");
     }
@@ -55,11 +54,11 @@ function Welcome(props) {
                 {isAuthenticated ?
                     <div>
                         <h6> Start searching!</h6 >
-                        <button className="welcome-btn" role="button" onClick={() => componentDidMount(loading, user, props)}>Get Started</button>
+                        <button className="welcome-btn" onClick={() => componentDidMount(loading, user, props)}>Get Started</button>
                     </div > :
                     <div >
                         <h6>New?</h6>
-                        <button className="welcome-btn" role="button" onClick={() => loginWithRedirect({})}>Sign in to get started</button>
+                        <button className="welcome-btn" onClick={() => loginWithRedirect({})}>Sign in to get started</button>
                     </div>}
             </div>
             <Link to='/profile' className="testProfile">[TEST] profile</Link>
@@ -69,4 +68,3 @@ function Welcome(props) {
 }
 
 export default Welcome;
-
