@@ -1,3 +1,4 @@
 module.exports = {
-    UserAnswers: require("./answers")
+    UserAnswers: require("./answers"),
+    User: require("./user")
 };

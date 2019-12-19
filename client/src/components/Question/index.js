@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
-import Select from 'react-select';
 import Jumbotron from '../Jumbotron';
-import { Link } from 'react-router-dom';
 import './question.css'
 
 class Question extends Component {
@@ -26,13 +24,16 @@ class Question extends Component {
     handleRedirect = res => {
         if (res.status === 200) {
             console.log('foo2')
+            console.log(this.props.history);
             this.props.history.push('/mymatch');
+            console.log(this.props.history);
         }
-    }
+    };
+    
     handleFormSubmit = evt => {
         evt.preventDefault();
         console.log(this.state);
-        API.saveUser({
+        API.saveUserAnswers({
             game: this.state.gameDropdown,
             playLevel: this.state.levelDropdown,
             troll: this.state.trollDropdown,
@@ -51,7 +52,7 @@ class Question extends Component {
                 <Jumbotron>
                     <p className="pSize">What game are you looking to group up in?</p>
                     <div className="dropdown">
-                        <select onChange={this.handleInputChange} value={this.state.game} name="game" className="dropStyle">
+                        <select value={this.state.gameDropdown} onChange={this.handleInputChange}  name="gameDropdown" className="dropStyle">
                             <option value="League of Legends">League Of Legends</option>
                             <option value="Escape From Tarkov">Escape From Tarkov</option>
                             <option value="Halo Reach">Halo Reach</option>

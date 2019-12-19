@@ -3,15 +3,15 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './pages/about';
 import Landing from './pages/landing';
 import MatchPage from './pages/match';
-import Question from './pages/question';
-import Register from './pages/register';
+import Questions from './pages/question';
 import Profile from './pages/profile';
 import './App.css';
 import { useAuth0 } from "./react-auth0-spa";
 import Navbar from './components/Navbar/';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
-  const { loading, isAuthenticated, loginWithRedirect } = useAuth0();
+  const { loading } = useAuth0();
 
   if (loading) {
     return <div className="loadMe">Loading...</div>;
@@ -24,10 +24,9 @@ function App() {
       <Switch>
         <Route exact path='/' component={Landing} />
         <Route exact path='/about' component={About} />
-        <Route exact path='/register' component={Register} />
-        <Route exact path='/matchform' component={Question} />
-        <Route exact path='/mymatch' component={MatchPage} />
-        <Route path='/profile' component={Profile} />
+        <PrivateRoute exact path='/matchform' component={Questions} />
+        <PrivateRoute path='/mymatch' component={MatchPage} />
+        <PrivateRoute path='/profile' component={Profile} />
       </Switch>
     </Router>
   );
