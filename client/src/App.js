@@ -8,6 +8,7 @@ import Profile from './pages/profile';
 import './App.css';
 import { useAuth0 } from "./react-auth0-spa";
 import Navbar from './components/Navbar/';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   const { loading } = useAuth0();
@@ -23,9 +24,9 @@ function App() {
       <Switch>
         <Route exact path='/' component={Landing} />
         <Route exact path='/about' component={About} />
-        <Route exact path='/matchform' component={Questions} />
-        <Route path='/mymatch' component={MatchPage} />
-        <Route path='/profile' component={Profile} />
+        <PrivateRoute exact path='/matchform' component={Questions} />
+        <PrivateRoute path='/mymatch' component={MatchPage} />
+        <PrivateRoute path='/profile' component={Profile} />
       </Switch>
     </Router>
   );
