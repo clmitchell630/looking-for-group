@@ -25,8 +25,8 @@ function App() {
       <Switch>
         <Route exact path='/' component={Landing} />
         <Route exact path='/about' component={About} />
-        <PrivateRoute exact path='/matchform' component={Questions} />
-        <PrivateRoute path='/mymatch' component={MatchPage} />
+        <PrivateRoute exact path='/matchform/:userid' component={Questions} />
+        <PrivateRoute path='/matchform/:userid/mymatch' component={MatchPage} />
         <PrivateRoute path='/profile' component={Profile} />
         <PrivateRoute path='/external-api' component={ExternalApi} />
       </Switch>

@@ -16,7 +16,7 @@ class MatchPage extends Component {
     render() {
         return (
             <Container>
-                    <Match />
+                    <Match history={this.props.history}/>
             </Container>
         );
     }

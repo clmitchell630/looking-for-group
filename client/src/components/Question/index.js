@@ -25,7 +25,7 @@ class Question extends Component {
         if (res.status === 200) {
             console.log('foo2')
             console.log(this.props.history);
-            this.props.history.push('/mymatch');
+            this.props.history.push(this.props.history.location.pathname + '/mymatch/');
             console.log(this.props.history);
         }
     };

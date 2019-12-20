@@ -3,9 +3,10 @@ import Jumbotron from '../Jumbotron';
 import { Container, Row, Col } from '../Grid';
 
 import './match.css';
+import API from '../../utils/API';
 
 class Match extends Component {
-
+    
     state = {
         name:"",
         nameAnswers: {
@@ -29,7 +30,18 @@ class Match extends Component {
         ]
     };
 
-//here
+    componentDidMount() {
+        let userid = this.props.history.location.pathname.split ("/")
+        userid = userid[2];
+        console.log(userid);
+        this.loadUserMatch(userid);
+    }
+
+    loadUserMatch = (userid) => {
+        API.getUser(userid)
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
+    }
 
     render() {
         return (
@@ -60,27 +72,27 @@ class Match extends Component {
     }
 }
 
-class Answers {
-    constructor(game, playLevel, troll, skillLevel) {
-        this.game = game;
-        this.playLevel = playLevel;
-        this.troll = troll;
-        this.skillLevel = skillLevel;
-    }
-}
-class Player {
-    constructor(name, answers) {
-        this.name = name;
-        this.answers = {
-            game: answers.game,
-            playLevel: answers.playLevel,
-            troll: answers.troll,
-            skillLevel: answers.skillLevel
-        }
-    }
-}
-var ans = new Answers("WoW", "scrub", "yes", "0");
-var match = new Player("bob", ans);
+// class Answers {
+//     constructor(game, playLevel, troll, skillLevel) {
+//         this.game = game;
+//         this.playLevel = playLevel;
+//         this.troll = troll;
+//         this.skillLevel = skillLevel;
+//     }
+// }
+// class Player {
+//     constructor(name, answers) {
+//         this.name = name;
+//         this.answers = {
+//             game: answers.game,
+//             playLevel: answers.playLevel,
+//             troll: answers.troll,
+//             skillLevel: answers.skillLevel
+//         }
+//     }
+// }
+// var ans = new Answers("WoW", "scrub", "yes", "0");
+// var match = new Player("bob", ans);
 
 
 export default Match;
