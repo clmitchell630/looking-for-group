@@ -2,89 +2,8 @@ import React, { Component } from 'react';
 import API from '../../utils/API';
 import Jumbotron from '../Jumbotron';
 import './question.css'
-import Select from 'react-select';
 
-const options = [
-	{ value: 'League of Legends', label: 'League of Legends' },
-	{ value: 'Escape from Tarkov', label: 'Escape from Tarkov' },
-	{ value: 'Halo Reach', label: 'Halo Reach' },
-	{ value: 'Borderlands 3', label: 'Borderlands 3' },
-	{ value: 'Call of Duty: Black Ops 3', label: 'Call of Duty: Black Ops 3' },
-	{ value: 'Call of Duty: Modern Warfare', label: 'Call of Duty: Modern Warfare' },
-	{ value: 'Battlefield 4', label: 'Battlefield 4' },
-	{ value: 'Battlefield 1', label: 'Battlefield 1' },
-	{ value: 'Dota', label: 'Dota' },
-	{ value: 'Overwatch', label: 'Overwatch' },
-	{ value: 'World of Warcraft', label: 'World of Warcraft' },
-	{ value: 'RuneScape', label: 'RuneScape' },
-	{ value: 'Hearthstone', label: 'Hearthstone' },
-    { value: 'Counter-Strike', label: 'Counter-Strike' },
-    { value: 'PUBG', label: 'PUBG' },
-    { value: 'Minecraft', label: 'Minecraft' },
-    { value: 'FIFA 20', label: 'FIFA 20' },
-    { value: 'Apex Legends', label: 'Apex Legends' },
-    { value: 'Titanfall 2', label: 'Titanfall 2' },
-    { value: 'Grand Theft Auto V', label: 'Grand Theft Auto V' },
-    { value: "Tom Clancy's Rainbow Six: Siege", label: "Tom Clancy's Rainbow Six: Siege" },
-    { value: 'Pokemon Sword/Shield', label: 'Pokemon Sword/Shield' },
-    { value: 'Rocket League', label: 'Rocket League' },
-    { value: 'NBA 2K20', label: 'NBA 2K20' },
-    { value: 'Red Dead Redemption 2', label: 'Red Dead Redemption 2' },
-    { value: 'Smite', label: 'Smite' },
-    { value: 'World of Tanks', label: 'World of Tanks' },
-    { value: 'Warframe', label: 'Warframe' },
-    { value: 'Madden NFL 20', label: 'Madden NFL 20' },
-    { value: 'Super Smash Bros. Ultimate', label: 'Super Smash Bros. Ultimate' },
-    { value: 'Diablo III', label: 'Diablo III' },
-    { value: 'StarCraft II', label: 'StarCraft II' },
-    { value: 'Tekken 7', label: 'Tekken 7' },
-    { value: 'Street Fighter V', label: 'Street Fighter V' },
-    { value: 'Mortal Kombat 11', label: 'Mortal Kombat 11' },
-    { value: 'Gears of War 5', label: 'Gears of War 5' },
-    { value: 'Star Wars Battlefront II', label: 'Star Wars Battlefront II' },
-    { value: 'Heroes of the Storm', label: 'Heroes of the Storm' },
-    { value: 'NHL 20', label: 'NHL 20' },
-    { value: 'Dying Light', label: 'Dying Light' },
-    { value: 'Dead Island 2', label: 'Dead Island 2' },
-    { value: "Tom Clancy's The Division 2", label: "Tom Clancy's The Division 2" },
-    { value: 'For Honor', label: 'For Honor' },
-    { value: 'Quake Champions', label: 'Quake Champions' },
-    { value: 'Unreal Tournament', label: 'Unreal Tournament' },
-    { value: 'Dragon Ball FighterZ', label: 'Dragon Ball FighterZ' },
-    { value: 'Team Fortress 2', label: 'Team Fortress 2' },
-    { value: 'Paladins', label: 'Paladins' },
-    { value: 'Dead by Daylight', label: 'Dead by Daylight' },
-    { value: 'Far Cry 5', label: 'Far Cry 5' },
-    { value: 'Sniper Elite 3', label: 'Sniper Elite 3' },
-    { value: 'Need for Speed', label: 'Need for Speed' },
-    { value: 'World War Z', label: 'World War Z' },
-    { value: 'Absolver', label: 'Absolver' },
-    { value: 'A Way Out', label: 'A Way Out' },
-    { value: 'Syndicate', label: 'Syndicate' },
-    { value: "Assassin's Creed: Unity", label: "Assassin's Creed: Unity" },
-    { value: 'Monster Hunter: World', label: 'Monster Hunter: World' },
-    { value: 'Dead Space 3', label: 'Dead Space 3' },
-    { value: 'Portal 2', label: 'Portal 2' },
-    { value: 'Sea of Thieves', label: 'Sea of Thieves' },
-    { value: 'Worms W.M.D', label: 'Worms W.M.D' },
-    { value: 'Payday 2', label: 'Payday 2' },
-    { value: 'Tetris 99', label: 'Tetris 99' },
-    { value: 'Mario Tennis Aces', label: 'Mario Tennis Aces' },
-    { value: 'Overcooked!', label: 'Overcooked!' },
-    { value: 'Splatoon 2', label: 'Splatoon 2' },
-    { value: 'Killing Floor 2', label: 'Killing Floor 2' },
-    { value: 'Injustice 2', label: 'Injustice 2' },
-    { value: "Tom Clancy's Ghost Recon Wildlands", label: "Tom Clancy's Ghost Recon Wildlands" },
-    { value: 'Ark: Survival Evolved', label: 'Ark: Survival Evolved' },
-    { value: '7 Days to Die', label: '7 Days to Die' },
-    { value: 'H1Z1', label: 'H1Z1' },
-    { value: 'EA Sports UFC 3', label: 'EA Sports UFC 3' },
-    { value: 'Halo Wars 2', label: 'Halo Wars 2' },
-    { value: 'Anthem', label: 'Anthem' },
-];
-
-
-class Question extends React.Component {
+class Question extends Component {
 
     state = {
 
@@ -94,13 +13,6 @@ class Question extends React.Component {
         skillDropdown: "1",
 
     };
-
-    handleChange = selectedOption => {
-		this.setState(
-			{ selectedOption },
-			() => console.log('Option selected:', this.state.selectedOption)
-		);
-	};
 
     handleInputChange = evt => {
 
@@ -134,19 +46,91 @@ class Question extends React.Component {
 
 
     render() {
-        const { selectedOption } = this.state;
         return (
             <div className="Question">
                 <h2 id="questionaireh" className="questionaire-link">Who're You Looking For?</h2>
                 <Jumbotron>
                     <p className="pSize">What game are you looking to group up in?</p>
                     <div className="dropdown">
-                    <Select
-				value={selectedOption}
-				onChange={this.handleChange}
-                options={options}
-                classNamePrefix="dropStyle"
-			        />
+                        <select value={this.state.gameDropdown} onChange={this.handleInputChange}  name="gameDropdown" className="dropStyle">
+                            <option value="League of Legends">League Of Legends</option>
+                            <option value="Escape From Tarkov">Escape From Tarkov</option>
+                            <option value="Halo Reach">Halo Reach</option>
+                            <option value="Borderlands 3">Borderlands 3</option>
+                            <option value="Call of Duty: Black Ops 3">Call of Duty: Black Ops 3</option>
+                            <option value="Call of Duty: Modern Warfare">Call of Duty: Modern Warfare</option>
+                            <option value="BattleField 4">BattleField 4</option>
+                            <option value="BattleField 1">BattleField 1</option>
+                            <option value="Dota">Dota</option>
+                            <option value="Overwatch">Overwatch</option>
+                            <option value="World of Warcraft">World of Warcraft</option>
+                            <option value="Runescape">Runescape</option>
+                            <option value="Hearthstone">Hearthstone</option>
+                            <option value="Counter-Strike">Counter-Strike</option>
+                            <option value="Anthem">Anthem</option>
+                            <option value="H1Z1">H1Z1</option>
+                            <option value="Halo Wars 2">Halo Wars 2</option>
+                            <option value="EA Sports UFC 3">EA Sports UFC 3</option>
+                            <option value="7 Days to Die">7 Days to Die</option>
+                            <option value="Ark: Survival Evolved">Ark: Survival Evolved</option>
+                            <option value="Injustice 2">Injustice 2</option>
+                            <option value="Tom Clancy's Ghost Recon Wildlands">Tom Clancy's Ghost Recon Wildlands</option>
+                            <option value="Killing Floor 2">Killing Floor 2</option>
+                            <option value="Splatoon 2">Splatoon 2</option>
+                            <option value="Overcooked!">Overcooked!</option>
+                            <option value="Mario Tennis Aces">Mario Tennis Aces</option>
+                            <option value="Tetris 99">Tetris 99</option>
+                            <option value="Payday 2">Payday 2</option>
+                            <option value="Worms W.M.D">Worms W.M.D</option>
+                            <option value="Sea of Thieves">Sea of Thieves</option>
+                            <option value="Portal 2">Portal 2</option>
+                            <option value="Dead Space 3">Dead Space 3</option>
+                            <option value="Monster Hunter: World">Monster Hunter: World</option>
+                            <option value="Assassin's Creed: Unity">Assassin's Creed: Unity</option>
+                            <option value="Syndicate">Syndicate</option>
+                            <option value="A Way Out">A Way Out</option>
+                            <option value="Absolver">Absolver</option>
+                            <option value="World War Z">World War Z</option>
+                            <option value="Need for Speed">Need for Speed</option>
+                            <option value="Sniper Elite 3">Sniper Elite 3</option>
+                            <option value="Far Cry 5">Far Cry 5</option>
+                            <option value="Dead by Daylight">Dead by Daylight</option>
+                            <option value="Paladins">Paladins</option>
+                            <option value="Team Fortress 2">Team Fortress 2</option>
+                            <option value="Dragon Ball FighterZ">Dragon Ball FighterZ</option>
+                            <option value="Unreal Tournament">Unreal Tournament</option>
+                            <option value="Quake Champions">Quake Champions</option>
+                            <option value="For Honor">For Honor</option>
+                            <option value="Tom Clancy's The Division 2">Tom Clancy's The Division 2</option>
+                            <option value="Dead Island 2">Dead Island 2</option>
+                            <option value="Dying Light">Dying Light</option>
+                            <option value="NHL 20">NHL 20</option>
+                            <option value="Heroes of the Storm">Heroes of the Storm</option>
+                            <option value="Star Wars Battlefront II">Star Wars Battlefront II</option>
+                            <option value="Gears of War 5">Gears of War 5</option>
+                            <option value="Mortal Kombat 11">Mortal Kombat 11</option>
+                            <option value="Street Fighter V">Street Fighter V</option>
+                            <option value="Tekken 7">Tekken 7</option>
+                            <option value="StarCraft II">StarCraft II</option>
+                            <option value="Diablo III">Diablo III</option>
+                            <option value="Super Smash Bros. Ultimate">Super Smash Bros. Ultimate</option>
+                            <option value="Madden NFL 20">Madden NFL 20</option>
+                            <option value="Warframe">Warframe</option>
+                            <option value="World of Tanks">World of Tanks</option>
+                            <option value="Smite">Smite</option>
+                            <option value="Red Dead Redemption 2">Red Dead Redemption 2</option>
+                            <option value="NBA 2K20">NBA 2K20</option>
+                            <option value="Rocket League">Rocket League</option>
+                            <option value="Pokemon Sword/Shield">Pokemon Sword/Shield</option>
+                            <option value="Tom Clancy's Rainbow Six: Siege">Tom Clancy's Rainbow Six: Siege</option>
+                            <option value="Grand Theft Auto V">Grand Theft Auto V</option>
+                            <option value="Titanfall 2">Titanfall 2</option>
+                            <option value="Apex Legends">Apex Legends</option>
+                            <option value="FIFA 20">FIFA 20</option>
+                            <option value="Minecraft">Minecraft</option>
+                            <option value="PUBG">PUBG</option>
+
+                        </select>
                     </div>
                     <p className="pSize">Level of play</p>
                     <div className="dropdown">
@@ -176,12 +160,9 @@ class Question extends React.Component {
                     <div className="buttonDiv">
                         <button className="sub-btn" onClick={this.handleFormSubmit}>Save Results</button>
                     </div>
-
                 </Jumbotron>
-
             </div>
         );
     }
 }
-
 export default Question;
