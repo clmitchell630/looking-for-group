@@ -6,40 +6,39 @@ import './match.css';
 import API from '../../utils/API';
 
 class Match extends Component {
-    
+
     state = {
-        name:"",
-        nameAnswers: {
-            game:"",
-            playLevel:"",
-            troll:"",
-            skillLevel:""
-        },
-        matches:[
-            /*
-            {
-                matchName: "",
-                answers: {
-                    game:"",
-                    playLevel:"",
-                    troll:"",
-                    skillLevel:""
-                }
-            } 
-            */
+        name: {},
+        nameAnswers: {},
+        matches: [
         ]
     };
 
     componentDidMount() {
-        let userid = this.props.history.location.pathname.split ("/")
+        let userid = this.props.history.location.pathname.split("/")
         userid = userid[2];
         console.log(userid);
         this.loadUserMatch(userid);
     }
 
     loadUserMatch = (userid) => {
-        API.getUser(userid)
-            .then(res => console.log(res))
+        API.getMatches(userid)
+            .then(res => {
+                console.log(res.data);
+                this.setState({
+                    name: {
+                        username: res.data.username,
+                        email: res.data.email
+                    },
+                    nameAnswers: {
+                        game: res.data.useranswers.game,
+                        playLevel: res.data.useranswers.playLevel,
+                        troll: res.data.useranswers.troll,
+                        skillLevel: res.data.useranswers.skillLevel
+                    }
+                });
+                console.log(this.state);
+            })
             .catch(err => console.log(err));
     }
 
@@ -47,25 +46,47 @@ class Match extends Component {
         return (
             <div className="aboutContainer">
                 <div className="about-group1">
-                    <h2>Your Match!</h2>
+                    <h2>Hello {this.state.name.username}</h2>
+                    <h6>Here is your match!</h6>
                 </div>
-                <Jumbotron>
+
+                <Container>
+
                     <Container>
                         <Row>
-                            <Col size="4"></Col>
-                            <Col size="4">
-                                <h5>Username: Connander</h5>
-                                <h5>Game: Halo Reach</h5>
-                                <h5>Play Level: Casual</h5>
-                                <h5>Troll?: No</h5>
-                                <h5>Skill Level: 1</h5>
-                                <h4>Connect!</h4>
-                                <h5>wolves3777@gmail.com</h5>
+                            <Col size="6">
+                                <Jumbotron>
+                                    <div >
+                                        <h3>Your Answers</h3>
+                                        <ul className="list-unstyled">
+                                            <li>Username: <span className="resultsStyle">{this.state.name.username}</span></li>
+                                            <li>Email: <span className="resultsStyle">{this.state.name.email}</span></li>
+                                            <li>Game: <span className="resultsStyle">{this.state.nameAnswers.game}</span></li>
+                                            <li>Play Level: <span className="resultsStyle">{this.state.nameAnswers.playLevel}</span></li>
+                                            <li>Troll?: <span className="resultsStyle">{this.state.nameAnswers.troll}</span></li>
+                                            <li>Skill Level: <span className="resultsStyle">{this.state.nameAnswers.skillLevel}</span></li>
+                                        </ul>
+                                    </div>
+                                </Jumbotron>
                             </Col>
-                            <Col size="4"></Col>
+                            <Col size="6">
+                                <Jumbotron>
+                                    <h3>Their Answers</h3>
+                                    <ul className="list-unstyled">
+                                        <li>Username: <span className="resultsStyle">{this.state.name.username}</span></li>
+                                        <li>Email: <span className="resultsStyle">{this.state.name.email}</span></li>
+                                        <li>Game: <span className="resultsStyle">{this.state.nameAnswers.game}</span></li>
+                                        <li>Play Level: <span className="resultsStyle">{this.state.nameAnswers.playLevel}</span></li>
+                                        <li>Troll?: <span className="resultsStyle">{this.state.nameAnswers.troll}</span></li>
+                                        <li>Skill Level: <span className="resultsStyle">{this.state.nameAnswers.skillLevel}</span></li>
+                                    </ul>
+                                </Jumbotron>
+                            </Col>
                         </Row>
                     </Container>
-                </Jumbotron>
+
+                </Container>
+
             </div>
 
         );

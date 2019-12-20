@@ -23,10 +23,10 @@ class Question extends Component {
 
     handleRedirect = res => {
         if (res.status === 200) {
-            console.log('foo2')
-            console.log(this.props.history);
+            // console.log('foo2')
+            // console.log(this.props.history);
             this.props.history.push(this.props.history.location.pathname + '/mymatch/');
-            console.log(this.props.history);
+            // console.log(this.props.history);
         }
     };
     

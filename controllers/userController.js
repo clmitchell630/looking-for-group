@@ -1,4 +1,5 @@
 const db = require("../models");
+const mongoose = require("mongoose");
 
 module.exports = {
 
@@ -8,7 +9,7 @@ module.exports = {
             .create(req.body)
             .then(dbModel => {
                 console.log("bleh");
-                return db.User.findOneAndUpdate({}, { $set: { answers: dbModel._id } }, { new: false }).then(dbModel => res.json(dbModel));
+                return db.User.findOneAndUpdate({}, { $set: { useranswers: dbModel._id } }, { new: false }).then(dbModel => res.json(dbModel));
             })
             .catch(err => res.status(422).json(err));
     },
@@ -27,19 +28,30 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
-    getProfile: function (req, res) {
-        console.log("userController.js::getProfile()");
-        db.User
-            .findOne({ "sub": req.params.userprofile })
-            .populate("UserAnswers")
-            .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));
-    },
+    
+    // getProfile: function (req, res) {
+    //     console.log("userController.js::getProfile()");
+    //     db.User
+    //         .findOne({ "sub": req.params.userprofile })
+    //         .populate("UserAnswers")
+    //         .then(dbModel => res.json(dbModel))
+    //         .catch(err => res.status(422).json(err));
+    // },
     getMatches: function (req, res) {
-       console.log("userController.js::getMatch()");
-       console.log(req.params.username);
+        console.log("userController.js::getMatch()");
+        console.log(req.params.username);
         // req.params.username will be user email
-        console.log(db.User.findOne({ "email": req.params.username }));
+        db.User
+            .findOne({ "sub": req.params.username })
+            .populate("useranswers")
+            .exec(function (err, data) {
+                if (err) {
+                    res.status(422).json(err);
+                }
+                console.log("userController.js::getMatch()/inthen");
+                console.log(data);
+                res.json(data);
+            });
         // let player = db.User.findOne({ "email": req.params.username }).populate;
         // logic to lookup matches based on player profile
         // db.User

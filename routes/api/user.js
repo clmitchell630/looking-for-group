@@ -14,8 +14,8 @@ router.route("/answers")
 router.route("/getmatches/:username")
     .get(userController.getMatches);
 
-router.route("/:userprofile")
-    .get(userController.getProfile);
+// router.route("/:userprofile")
+//     .get(userController.getProfile);
 
 
 // router

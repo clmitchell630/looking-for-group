@@ -26,7 +26,7 @@ function handleUserSubmit(loading, user, props) {
     }
 
     API.saveUser({
-        username: user.name,
+        username: user.nickname,
         email: user.email,
         sub: user.sub
     }).then(res => {
