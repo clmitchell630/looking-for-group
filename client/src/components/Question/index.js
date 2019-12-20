@@ -88,7 +88,10 @@ class Question extends React.Component {
 
     state = {
 
-        selectedOption: null,
+        gameDropdown: "League of Legends",
+        levelDropdown: "Casual",
+        trollDropdown: "Yes",
+        skillDropdown: "1",
 
     };
 
