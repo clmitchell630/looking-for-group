@@ -1,4 +1,5 @@
 {
   "domain": "dev-chris630.auth0.com",
-  "clientId": "7Ace89i6zztURWh2tWdQ3dAQHdveZwrz"
+  "clientId": "7Ace89i6zztURWh2tWdQ3dAQHdveZwrz",
+  "audience": "https://lookingforgroup-app.herokuapp.com/"
 }

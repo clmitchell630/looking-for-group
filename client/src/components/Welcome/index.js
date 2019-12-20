@@ -62,6 +62,8 @@ function Welcome(props) {
                     </div>}
             </div>
             <Link to='/profile' className="testProfile">[TEST] profile</Link>
+            <Link to='/external-api' className="testProfile">[TEST] external api</Link>
+
         </div>
     );
 
