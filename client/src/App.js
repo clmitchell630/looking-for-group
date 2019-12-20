@@ -9,6 +9,7 @@ import './App.css';
 import { useAuth0 } from "./react-auth0-spa";
 import Navbar from './components/Navbar/';
 import PrivateRoute from './components/PrivateRoute';
+import ExternalApi from './utils/ExternalApi';
 
 function App() {
   const { loading } = useAuth0();
@@ -27,6 +28,7 @@ function App() {
         <PrivateRoute exact path='/matchform' component={Questions} />
         <PrivateRoute path='/mymatch' component={MatchPage} />
         <PrivateRoute path='/profile' component={Profile} />
+        <PrivateRoute path='/external-api' component={ExternalApi} />
       </Switch>
     </Router>
   );
