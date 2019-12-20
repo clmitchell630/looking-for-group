@@ -6,7 +6,31 @@ import './match.css';
 
 class Match extends Component {
 
-    
+    state = {
+        name:"",
+        nameAnswers: {
+            game:"",
+            playLevel:"",
+            troll:"",
+            skillLevel:""
+        },
+        matches:[
+            /*
+            {
+                matchName: "",
+                answers: {
+                    game:"",
+                    playLevel:"",
+                    troll:"",
+                    skillLevel:""
+                }
+            } 
+            */
+        ]
+    };
+
+//here
+
     render() {
         return (
             <div className="aboutContainer">
@@ -35,5 +59,28 @@ class Match extends Component {
         );
     }
 }
+
+class Answers {
+    constructor(game, playLevel, troll, skillLevel) {
+        this.game = game;
+        this.playLevel = playLevel;
+        this.troll = troll;
+        this.skillLevel = skillLevel;
+    }
+}
+class Player {
+    constructor(name, answers) {
+        this.name = name;
+        this.answers = {
+            game: answers.game,
+            playLevel: answers.playLevel,
+            troll: answers.troll,
+            skillLevel: answers.skillLevel
+        }
+    }
+}
+var ans = new Answers("WoW", "scrub", "yes", "0");
+var match = new Player("bob", ans);
+
 
 export default Match;

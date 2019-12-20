@@ -9,5 +9,8 @@ export default {
     },
     saveUserAnswers: function (formData) {
         return axios.post("/api/user/answers", formData);
+    },
+    getMatches: function (username) {
+        return axios.get("/api/user/getmatches/" + username);
     }
 }
