@@ -33,7 +33,10 @@ class Question extends Component {
     handleFormSubmit = evt => {
         evt.preventDefault();
         console.log(this.state);
-        API.saveUserAnswers({
+        let userid = this.props.history.location.pathname.split("/")
+        userid = userid[2];
+        console.log(userid)
+        API.saveUserAnswers(userid, {
             game: this.state.gameDropdown,
             playLevel: this.state.levelDropdown,
             troll: this.state.trollDropdown,

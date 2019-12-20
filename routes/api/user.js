@@ -7,7 +7,7 @@ router.route("/")
 router.route("/:userid")
     .get(userController.existingUser);
 
-router.route("/answers")
+router.route("/answers/:userid")
     .post(userController.create);
 
 
