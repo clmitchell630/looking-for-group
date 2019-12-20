@@ -6,7 +6,7 @@ function Jumbotron({ children }) {
     return (
         <Container>
             <div className="jumbotron addStyle">
-                <p>{children}</p>
+                <div>{children}</div>
             </div>
         </Container>
     );

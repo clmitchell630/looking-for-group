@@ -1,23 +1,18 @@
 import React, { Component } from "react";
-import { Col, Row, Container } from '../components/Grid';
+import { Container } from '../components/Grid';
 import Match from '../components/Match';
 
 class MatchPage extends Component {
     state = {
-        lastMatch: []
-    };
-
-    // componentDidMount() {
-    //     API.getMatch()
-    //     .then(res => this.setState({lastMatch: res.data}))
-    //     .catch(err => console.log(err))
-    // }
-
-    handleThumbsUpButton = savedMatch => {
-
-
+        username: "",
+        answers:[{
+            gameDropdown: "League of Legends",
+            levelDropdown: "Casual",
+            trollDropdown: "Yes",
+            skillDropdown: ""
+            }]
     }
-
+    
     render() {
         return (
             <Container>

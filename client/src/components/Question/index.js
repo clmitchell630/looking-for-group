@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
-import Select from 'react-select';
 import Jumbotron from '../Jumbotron';
-import { Link } from 'react-router-dom';
 import './question.css'
+import Select from 'react-select';
 
 const options = [
 	{ value: 'League of Legends', label: 'League of Legends' },
@@ -110,13 +109,16 @@ class Question extends React.Component {
     handleRedirect = res => {
         if (res.status === 200) {
             console.log('foo2')
+            console.log(this.props.history);
             this.props.history.push('/mymatch');
+            console.log(this.props.history);
         }
-    }
+    };
+    
     handleFormSubmit = evt => {
         evt.preventDefault();
         console.log(this.state);
-        API.saveUser({
+        API.saveUserAnswers({
             game: this.state.gameDropdown,
             playLevel: this.state.levelDropdown,
             troll: this.state.trollDropdown,

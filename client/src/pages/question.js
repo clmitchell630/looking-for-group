@@ -1,21 +1,19 @@
 import React, { Component } from "react";
 import "../App.css";
 import Question from '../components/Question';
-import { Col, Row, Container} from '../components/Grid';
+import { Container} from '../components/Grid';
 
 
 class Questions extends Component {
 
-
-
     render() {
         return (
             <Container>
-                <Question />
+                <Question history={this.props.history} />
             </Container>
         );
     }
 
 }
 
-export default Question;
+export default Questions;
