@@ -9,6 +9,6 @@ const answersSchema = new Schema({
     date: { type: Date, default: Date.now }
 });
 
-const UserAnswers = mongoose.model("UserAnswers", answersSchema);
+const UserAnswers = mongoose.model("UserAnswers", answersSchema, "useranswers");
 
 module.exports = UserAnswers;

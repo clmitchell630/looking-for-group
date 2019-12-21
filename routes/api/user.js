@@ -1,20 +1,16 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
-router.route("/")
-    .post(userController.createUser);    
+router.route("/saveuser")
+    .post(userController.createUser);
 
 router.route("/:userid")
     .get(userController.existingUser);
 
-router.route("/answers")
+router.route("/answers/:userid")
     .post(userController.create);
 
-
-// router
-//     .route("/:id")
-//     .get(userController.findById)
-//     .put(userController.update)
-//     .delete(userController.remove);
+router.route("/")
+    .get(userController.getTheMatches);
 
 module.exports = router;

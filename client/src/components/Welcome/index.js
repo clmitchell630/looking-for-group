@@ -11,7 +11,7 @@ function componentDidMount(loading, user, props) {
     API.getUser(user.sub)
         .then(res => {
             if(res.data && res.data.sub === user.sub) {
-                props.history.push('/matchform');
+                props.history.push('/matchform/' + user.sub);
             } else {
                 handleUserSubmit(loading, user, props);
             }
@@ -26,13 +26,13 @@ function handleUserSubmit(loading, user, props) {
     }
 
     API.saveUser({
-        username: user.name,
+        username: user.nickname,
         email: user.email,
         sub: user.sub
     }).then(res => {
         if (res.status === 200) {
             console.log('foo2');
-            props.history.push('/matchform');
+            props.history.push('/matchform/' + user.sub);
             console.log(props.history);
         }
     }).catch(err => console.error(err));
@@ -61,8 +61,8 @@ function Welcome(props) {
                         <button className="welcome-btn" onClick={() => loginWithRedirect({})}>Sign in to get started</button>
                     </div>}
             </div>
-            <Link to='/profile' className="testProfile">[TEST] profile</Link>
-            <Link to='/external-api' className="testProfile">[TEST] external api</Link>
+            {/* <Link to='/profile' className="testProfile">[TEST] profile</Link>
+            <Link to='/external-api' className="testProfile">[TEST] external api</Link> */}
 
         </div>
     );

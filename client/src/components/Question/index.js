@@ -23,17 +23,20 @@ class Question extends Component {
 
     handleRedirect = res => {
         if (res.status === 200) {
-            console.log('foo2')
-            console.log(this.props.history);
-            this.props.history.push('/mymatch');
-            console.log(this.props.history);
+            // console.log('foo2')
+            // console.log(this.props.history);
+            this.props.history.push(this.props.history.location.pathname + '/mymatch/');
+            // console.log(this.props.history);
         }
     };
     
     handleFormSubmit = evt => {
         evt.preventDefault();
         console.log(this.state);
-        API.saveUserAnswers({
+        let userid = this.props.history.location.pathname.split("/")
+        userid = userid[2];
+        console.log(userid)
+        API.saveUserAnswers(userid, {
             game: this.state.gameDropdown,
             playLevel: this.state.levelDropdown,
             troll: this.state.trollDropdown,
