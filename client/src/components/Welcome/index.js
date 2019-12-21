@@ -61,8 +61,8 @@ function Welcome(props) {
                         <button className="welcome-btn" onClick={() => loginWithRedirect({})}>Sign in to get started</button>
                     </div>}
             </div>
-            <Link to='/profile' className="testProfile">[TEST] profile</Link>
-            <Link to='/external-api' className="testProfile">[TEST] external api</Link>
+            {/* <Link to='/profile' className="testProfile">[TEST] profile</Link>
+            <Link to='/external-api' className="testProfile">[TEST] external api</Link> */}
 
         </div>
     );
