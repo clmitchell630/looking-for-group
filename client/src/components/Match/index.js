@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Jumbotron from '../Jumbotron';
 import { Container, Row, Col } from '../Grid';
-
 import './match.css';
 import API from '../../utils/API';
 
@@ -18,12 +17,23 @@ class Match extends Component {
         let userid = this.props.history.location.pathname.split("/")
         userid = userid[2];
         console.log(userid);
-        this.loadUserMatch(userid);
+        this.loadUser(userid);
+    }
+    
+    getMyMatches = () => {
+        API.getMatch()
+            .then(res => {
+                console.log("API.getMatch response data:")
+                console.log(res.data);
+            })
+            .catch(err => console.log(err));
+
     }
 
-    loadUserMatch = (userid) => {
-        API.getMatches(userid)
+    loadUser = (userid) => {
+        API.getUser(userid)
             .then(res => {
+                console.log("API.getUser response data:")
                 console.log(res.data);
                 this.setState({
                     name: {
@@ -37,8 +47,11 @@ class Match extends Component {
                         skillLevel: res.data.useranswers.skillLevel
                     }
                 });
+                console.log("loadUser -> updated state:")
                 console.log(this.state);
+               
             })
+            .then(() =>  this.getMyMatches())
             .catch(err => console.log(err));
     }
 

@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
-router.route("/")
+router.route("/saveuser")
     .post(userController.createUser);
 
 router.route("/:userid")
@@ -10,18 +10,7 @@ router.route("/:userid")
 router.route("/answers/:userid")
     .post(userController.create);
 
-
-router.route("/getmatches/:username")
-    .get(userController.getMatches);
-
-// router.route("/:userprofile")
-//     .get(userController.getProfile);
-
-
-// router
-//     .route("/:id")
-//     .get(userController.findById)
-//     .put(userController.update)
-//     .delete(userController.remove);
+router.route("/")
+    .get(userController.getTheMatches);
 
 module.exports = router;
